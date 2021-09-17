@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-banner {
+    height: 159px;
+    width: 100%;
+    position: absolute;
+}
+
+.main {
+    padding: 10px;
+    padding-bottom: 300px;
+}
+
+header {
+    background-image: url(../img/header.jpg);
+}
+
+.center-title {
+    text-align: center;
+}
+
+.logomarca {
+    width: 15%;
+    height: auto;
+}
