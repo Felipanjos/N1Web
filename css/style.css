@@ -1,18 +1,24 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
-body {
+html, body {
+    height: 100%;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#footer, .push {
+    height: 50px;
 }
 
 .header-banner {
     height: 159px;
-    width: 100%;
+    width: 85%;
     position: absolute;
-}
-
-.main {
-    padding: 10px;
-    padding-bottom: 300px;
 }
 
 header {
