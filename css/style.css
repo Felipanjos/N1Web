@@ -33,3 +33,8 @@ header {
     width: 15%;
     height: auto;
 }
+
+#home {
+    background: #f3f9ff;
+    color: #56e852;
+}
