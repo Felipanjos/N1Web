@@ -19,87 +19,54 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <link rel="icon" href="img/icon.png">
-    <style>
-        .button {
-        background-color: #ff0000;
-        border-width: 2px;
-        color: white;
-        padding: 2px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
 
-        }
-    </style>
+        <script>
+            function somaProduto1(){
+                var preco = parseFloat(document.getElementById("preco1").innerText);
+                var qtd = parseFloat(document.getElementById("qtd1").value);
+                var total = preco * qtd;
 
-    <style>
-        .button2 {
-        background-color: lime;
-        color: black;
-        padding: 5px 20px;
-        font-size: 16px;
-        border-width: 2px
-        }
-    </style>
+                document.getElementById("total1").innerHTML = String(total);
+                valorTotal();
+            }
 
-    <script>
-        function somaProduto1(){
-        var preco = parseFloat(document.getElementById("preco1").innerText);
-        var qtd = parseFloat(document.getElementById("qtd1").value);
-        var total = preco * qtd;
+            function somaProduto2(){
+                var preco = parseFloat(document.getElementById("preco2").innerText);
+                var qtd = parseFloat(document.getElementById("qtd2").value);
+                var total = preco * qtd;
 
-        document.getElementById("total1").innerHTML = String(total);
-        valorTotal();
-        }
-    </script>
+                document.getElementById("total2").innerHTML = String(total);
+                valorTotal();
+            }
 
-    <script>
-        function somaProduto2(){
-        var preco = parseFloat(document.getElementById("preco2").innerText);
-        var qtd = parseFloat(document.getElementById("qtd2").value);
-        var total = preco * qtd;
-    
-        document.getElementById("total2").innerHTML = String(total);
-        valorTotal();
-        }
-    </script>
-    
-    <script>
-        function somaProduto3(){
-        var preco = parseFloat(document.getElementById("preco3").innerText);
-        var qtd = parseFloat(document.getElementById("qtd3").value);
-        var total = preco * qtd;
-    
-        document.getElementById("total3").innerHTML = String(total);
-        valorTotal();
-        }
-    </script>
+            function somaProduto3(){
+                var preco = parseFloat(document.getElementById("preco3").innerText);
+                var qtd = parseFloat(document.getElementById("qtd3").value);
+                var total = preco * qtd;
 
-    <script>
-        function valorTotal(){
-        var total1 = parseFloat(document.getElementById("total1").innerText);
-        var total2 = parseFloat(document.getElementById("total2").innerText);
-        var total3 = parseFloat(document.getElementById("total3").innerText);
-        var total = total1 + total2 + total3;
+                document.getElementById("total3").innerHTML = String(total);
+                valorTotal();
+            }
 
-        document.getElementById("h3Total").innerText = "Valor total = " + String(total);
-        qtdTotal();
-        }
-    </script>
+            function valorTotal(){
+                var total1 = parseFloat(document.getElementById("total1").innerText);
+                var total2 = parseFloat(document.getElementById("total2").innerText);
+                var total3 = parseFloat(document.getElementById("total3").innerText);
+                var total = total1 + total2 + total3;
 
-    <script>
-        function qtdTotal(){
-        var total1 = parseInt(document.forms["formID1"]["qtd1"].value);
-        var total2 = parseInt(document.forms["formID2"]["qtd2"].value);
-        var total3 = parseInt(document.forms["formID3"]["qtd3"].value);
-        var total = total1 + total2 + total3;
+                document.getElementById("h3Total").innerText = "Valor total : " + String(total);
+                qtdTotal();
+            }
+                    
+            function qtdTotal(){
+                var total1 = parseInt(document.forms["formID1"]["qtd1"].value);
+                var total2 = parseInt(document.forms["formID2"]["qtd2"].value);
+                var total3 = parseInt(document.forms["formID3"]["qtd3"].value);
+                var total = total1 + total2 + total3;
 
-        document.getElementById("h3QtdTotal").innerText = "Quantidade total = " + String(total);
-        }
-    </script>
+                document.getElementById("h3QtdTotal").innerText = "Quantidade total : " + String(total);
+            }
+        </script>
     </head>
 
     <header id="header"></header>
@@ -115,7 +82,7 @@
                 <table class="table">
                     <tr>
                         <th>Produto</th>
-                        <th>Preço</th>
+                        <th>Preço unitário</th>
                         <th>Quantidade</th>
                         <th>Total</th>
                         <th>Remover</th>
@@ -208,5 +175,6 @@
     </body>
 
     <script src="js/footer.js"></script>
+    
     <script src="js/header.js"></script>
 </html>

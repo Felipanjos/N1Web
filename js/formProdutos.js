@@ -38,3 +38,12 @@ $(document).ready(function(){
   });
 });
 
+
+$(document).ready(function(){
+  $("#btnmenu").click(function(){
+    $("#lanches").hide();
+    $("#bebidas").hide();
+    $("#doces").hide();
+    $("#almoco").hide();
+});
+});

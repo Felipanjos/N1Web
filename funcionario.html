@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Supermercado Compra Certa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="estiloMercado.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+</head>
+
+<body>
+  <div class="col mx-auto text-center center-vertical">
+    <a href="paginaInicial.html">
+      <img src="imagens/logomercado.png">
+    </a>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+
+      <ul class="nav navbar-nav ">
+        <li><a href="paginaInicial.html">Página inicial</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="conferencia.html">Conferência e embalagem</a></li>
+        <li><a href="entrega.html">Entrega</a></li>
+        <li><a href="cadastrarProduto.html">Cadastrar Produto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-bottom: 40px;">
+    
+
+    <form id="formCadastroProduto" class="form-group" name="nameFormulario" action="">
+      <h2>Cadastro Produto</h2>
+      <div class="form-group">
+        <label for="codigo">Código</label>
+        <input type="text" class="form-control" id="nome" placeholder="Insira o código do produto" name="codigo" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="nome">Descrição do Produto:</label>
+        <input type="text" class="form-control" id="descricao" placeholder="Insira o nome do produto" name="descricao" required>
+      </div>
+
+      <div class="form-group">
+        <label for="endereço">Peso:</label>
+        <input type="number" class="form-control" id="peso" placeholder="Insira o peso do produto" name="peso"
+          required>
+      </div>
+
+      
+      
+
+
+      
+        
+      <button type="submit" class="btn btn-default pull-right">Enviar</button>
+    </form>
+
+  </div>
+  </div>
+
+  <div class="footer text-center">
+    <p>
+      Endereço: Rua do céu -
+      Número de telefone: (71) 1234-5678 -
+      Email: compracerta@hotmail.com
+    </p>
+  </div>
+</body>
+
+</html>
