@@ -38,3 +38,38 @@ header {
     background: #f3f9ff;
     color: #56e852;
 }
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+.button {
+        width: 30%;
+        height: 20%;
+        padding: 15px 0;
+        background: red;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        transition: 1s;    
+        cursor: pointer;
+}
+
+.button2 {
+    width: 30%;
+    height: 80%;
+    padding: 15px 0;
+    background: #56e852;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s;    
+    cursor: pointer;
+}

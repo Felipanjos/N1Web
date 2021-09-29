@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Login</title>
+          <!-- Meta tags Obrigatórias -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+          <!-- Font Awesome -->
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  
+          <!-- Estilo customizado -->
+          <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+          <!-- jQuery -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+          <link rel="icon" href="img/icon.png">
+      </head>
+
+<header id="header"></header>
+
+<body>
+
+	<br>
+    <div class="wrapper container">
+  
+        <h2>Cadastro de pais, mães ou responsáveis</h2>
+		<h5><strong>Todas as informações são obrigatórias.</strong></h5>
+		<br>
+
+		<form class="form-horizontal" id="formResponsavel">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="NomeResp">Nome:</label>
+				
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="NomeResp" placeholder="Digite seu nome" name="NomeResp" required>
+				</div>
+			</div>	
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="SobrenomeResp">Sobrenome:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="sobrenomeResp" placeholder="Digite seu sobrenome" name="SobrenomeResp" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="cpfResp">CPF:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="cpfResp" placeholder="Ex.: 000.000.000-00" name="cpfResp" required>
+					</div>
+				</div>
+			</div>
+        
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="numeroResp">Número de celular:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control phone-ddd-mask" id="numeroResp" placeholder="Ex.: (00) 0000-0000" name="numeroResp" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="emailResp">E-mail:</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="emailResp" placeholder="Digite seu email" name="emailResp" required>
+						<small id="emailTexto" class="form-text text-muted">Não compartilharemos seu email com ninguém</small>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="loginResp">Login:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="loginResp" placeholder="Crie seu login" name="loginResp" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="senhaResp">Senha:</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="senhaResp" placeholder="**********" name="senhaResp" required>
+						<small id="emailTexto" class="form-text text-muted">Lembre-se de não compartilhar sua senha!</small>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="confSenha">Confirme sua senha:</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="confSenha" placeholder="**********" name="confSenhaResp" required>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">        
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Cadastrar</button>
+				</div>
+			</div>
+        </form>
+        
+      <div class="push"></div>
+
+    </div>
+
+    <footer id="footer"></footer>
+
+  </body>
+  
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="mask/javascripts/locastyle.js"></script>
+	<script src="js/validaSenha.js"></script>
+  	<script src="js/header.js"></script>
+	<script src="js/footer.js"></script>
+  </html>
+</head>
