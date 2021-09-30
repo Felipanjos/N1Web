@@ -1,21 +1,14 @@
 $(document).ready(function(){
-    $("#filhos").hide();
+    $("#alunos").hide();
     $("#pagamentos").hide();
     $("#config").hide();
 
-    $("#btnFilhos").click(function(){
-        $("#filho1").hide();
-        $("#filho2").hide();
+    $("#btnAlunos").click(function(){
+        $("#aluno1").hide();
     });
 
-        $("#btnFilho1").click(function(){
-            $("#filho1").show();
-            $("#filho2").hide();
-        });
-
-        $("#btnFilho2").click(function(){
-            $("#filho1").hide();
-            $("#filho2").show();
+        $("#btnAluno1").click(function(){
+            $("#aluno1").show();
         });
 
 

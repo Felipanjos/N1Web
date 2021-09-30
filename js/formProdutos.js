@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".formulario").hide()
+    $(".formulario").hide();
 });
 
 $(document).ready(function(){

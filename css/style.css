@@ -21,10 +21,6 @@ html, body {
     position: absolute;
 }
 
-header {
-    background-image: url(../img/header.jpg);
-}
-
 .center-title {
     text-align: center;
 }
@@ -39,6 +35,11 @@ header {
     color: #56e852;
 }
 
+.navbar-cad {
+    margin-top: -10px;
+    margin-left: 400px;
+}
+
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -46,41 +47,54 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-
-
-.button:hover, .button2:hover {
-    transform: scale(1.10);
+.removeItem, .removeItem2, .blockItem {
+    background-color: lightcoral;
 }
 
-.button {
-    background-color: #ff0000;
-    border-width: 2px;
-    color: white;
-    padding: 2px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+.addItem {
+    background-color: lightgreen;
 }
 
-.button2 {
-    background-color: lime;
+.unblockItem {
+    background-color: lightgreen;
+}
+
+.changeItem, .changeItem2 {
+    background-color: lightblue;
+}
+
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(30deg, rgb(88, 248, 82), rgb(11, 179, 62));
+}
+
+.div {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: auto;
+    border-radius: 15px;
+    color: #fff;
+    padding: 50px;
+}
+
+.cor {
     color: black;
-    padding: 5px 20px;
-    font-size: 16px;
-    border-width: 2px
 }
 
-.button, .button2 {
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.5s;  
-    font-size: 19px;
+.divcad {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-25%);
+    padding: 50px ;
+    border-radius: 15px;
+    color: #fff;
+    margin-top: 350px;
+    margin-bottom: -100px;
 }
 
-#btnLogged:hover {
-    
-}
+

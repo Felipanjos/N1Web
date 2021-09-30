@@ -1,6 +1,6 @@
-var botao = document.querySelector("#cadastrar");
+var btnCadastrarResponsavel = document.querySelector("#cadastrar");
 
-botao.addEventListener("click", function(event) {
+btnCadastrarResponsavel.addEventListener("click", function(event) {
     event.preventDefault();
 
     var pass = document.forms["formCadastro"]["senhaResp"].value;
@@ -20,14 +20,36 @@ botao.addEventListener("click", function(event) {
     form.reset();
 });
 
-var botao2 = document.querySelector("#cadastrarAluno");
+var btnCadastrarAluno = document.querySelector("#cadastrarAluno");
 
-botao2.addEventListener("click", function(event) {
+btnCadastrarAluno.addEventListener("click", function(event) {
     event.preventDefault();
 
     var pass = document.forms["formCadastroAluno"]["senhaAluno"].value;
     var confPass = document.forms["formCadastroAluno"]["confSenhaAluno"].value;
     var form = document.querySelector("#formCadastroAluno");
+    var senhaVazia = (pass == "" && confPass == "");
+
+    if ((pass == confPass) && !senhaVazia) {
+        alert("Cadastro realizado com sucesso.");   
+    }
+    
+    else if (senhaVazia) {
+        alert("Senha e Confirmar senha devem ser preenchidos.");
+        return;
+    }
+
+    form.reset();
+});
+
+var btnAlterarAluno = document.querySelector("#confirmarAlterarAluno");
+
+btnAlterarAluno.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var pass = document.forms["formControleAlterarAluno"]["novaSenhaAluno"].value;
+    var confPass = document.forms["formCadastroAluno"]["confNovaSenhaAluno"].value;
+    var form = document.querySelector("#formControleAlterarAluno");
     var senhaVazia = (pass == "" && confPass == "");
 
     if ((pass == confPass) && !senhaVazia) {

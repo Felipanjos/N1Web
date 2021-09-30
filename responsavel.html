@@ -22,15 +22,7 @@
 
         <script>
             $(document).ready(function(){
-
-                $("#formControleAlterarAluno").hide();
-
-                $("#alterarDadosAluno").click(function(){
-                    $("#formControleAlterarAluno").show();
-                });
-                $("#collapse").click(function(){
-                    $("#formControleAlterarAluno").hide();
-                });
+                $(".productBlock").show();
             })
         </script>
       </head>
@@ -43,22 +35,24 @@
         <div class="container" id="opcoesResponsavel">
             <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
                 <div class="btn-group">
-                    <button type="button" id="btnFilhos" class="btn btn-primary">Alunos</button>
+                    <button type="button" id="btnAlunos" class="btn btn-primary">Alunos</button>
                     <button type="button" id="btnPagamentos" class="btn btn-primary">Pagamentos</button>
                     <button type="button" id="btnConfig" class="btn btn-primary">Configurações</button>
                 </div>
             </div>  
 
-            <div id="filhos" class="formulario">
+            <div id="alunos" class="formulario">
                 <div class="childBar text-center">
                     <h2>Saldo atual: 30,00</h2><br>
 
-                    <input type="radio" class="btn-check" name="options" id="btnFilho1" autocomplete="off">
-                    <label class="btn btn-secondary" for="btnFilho1">Juninho</label>
-                    <label class="btn btn-secondary">Adicionar</label>
+                    <input type="radio" class="btn-check" name="options" id="btnAluno1" autocomplete="off">
+                    <label class="btn btn-secondary" for="btnAluno1">Juninho</label>
+                    <button type="submit" class="btn btn-default addItem" id="responsavelAdicionarAluno" style="margin-bottom: 8px;"><i class="fa fa-plus"></i> Adicionar</button>
                 </div>
 
-                <div id="filho1">
+                <div id="aluno1">
+
+                    
 
                     <br><h2>Dados</h2>
                     <table class="table table-hover">
@@ -89,8 +83,8 @@
                     </table>
 
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" id="alterarDadosAluno">Alterar dados</button>
-                        <button type="submit" class="btn btn-default">Bloquear aluno</button>
+                        <button type="submit" class="btn btn-default changeItem" id="alterarDadosAluno"><i class="fas fa-cog"></i> Alterar dados</button>
+                        <button type="submit" class="btn btn-default blockItem"><i class="fa fa-ban"></i> Bloquear aluno</button>
                     </div>
 
                     <div id="formControleAlterarAluno">
@@ -98,9 +92,9 @@
                         <h2 style="margin-top: 15px;">Alterar dados</h2>
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="novoEmailResp">E-mail:</label>
+                                <label class="control-label col-sm-2" for="novoEmailAluno">E-mail:</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="novoEmailResp" placeholder="Novo email" name="novoEmailResp" required>
+                                    <input type="email" class="form-control" id="novoEmailAluno" placeholder="Novo email" name="novoEmailAluno" required>
                                     <small id="emailTexto" class="form-text text-muted">Seu email não será compartilhado.</small>
                                 </div>
                             </div>
@@ -108,18 +102,18 @@
         
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="novoTelelefoneResp">Telefone:</label>
+                                <label class="control-label col-sm-2" for="novoTelefoneAluno">Telefone:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="novoTelelefoneResp" placeholder="Ex.: (71) 00000-0000" name="novoTelelefoneResp" required>
+                                    <input type="text" class="form-control" id="novoTelefoneAluno" placeholder="Ex.: (71) 00000-0000" name="novoTelefoneAluno" required>
                                 </div>
                             </div>
                         </div>
             
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="novaSenhaResp">Nova senha:</label>
+                                <label class="control-label col-sm-2" for="novaSenhaAluno">Nova senha:</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="novaSenhaResp" placeholder="**********" name="novaSenhaResp" required>
+                                    <input type="password" class="form-control" id="novaSenhaAluno" placeholder="**********" name="novaSenhaAluno" required>
                                     <small class="form-text text-muted">Lembre-se de não compartilhar sua senha!</small>
                                 </div>
                             </div>
@@ -127,17 +121,17 @@
             
                         <div class="form-horizontal">
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="confNovaSenha">Confirme a senha:</label>
+                                <label class="control-label col-sm-2" for="confNovaSenhaAluno">Confirme a senha:</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="confNovaSenhaResp" placeholder="**********" name="confNovaSenhaResp" required>
+                                    <input type="password" class="form-control" id="confNovaSenhaAluno" placeholder="**********" name="confNovaSenhaAluno" required>
                                 </div>
                             </div>
                         </div>
         
                         <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Confirmar</button>
-                                <button type="submit" class="btn btn-default" id="collapse">Fechar menu</button>
+                                <button type="submit" class="btn btn-default addItem" id="confirmarAlterarDadosAluno"><i class="fa fa-check"></i> Confirmar</button>
+                                <button type="submit" class="btn btn-default blockItem" id="collapse"><i class="fa fa-times"></i> Fechar menu</button>
                             </div>
                         </div>
                     </div>
@@ -151,38 +145,29 @@
                                     <button type="button" id="btnbebidas" class="btn btn-primary">Bebidas</button>
                                     <button type="button" id="btndoces" class="btn btn-primary">Doces</button>
                                     <button type="button" id="btnalmoco" class="btn btn-primary">Almoço</button>
-                                    <button type="button" id="btnmenu" class="btn btn-primary">Ocultar menu</button>
+                                    <button type="button" id="btnmenu" class="btn blockItem">Fechar</button>
                                 </div>
                         
                                 <div id="lanches" class="formulario">
                                     <div class="container-fluid bg-3 text-center">
                                         <h1>Lanches</h1><br>
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <!-- <div class="col-sm-4 item">
                                                 <h3>R$ 4,00</h3>
                                                 <img src="img/coxinha.jpg" height="300" width="300">
                                                 <h4>Coxinha de Frango</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
-                                            </div>
+                                            </div> -->
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 3,29</h3>
                                                 <img src="img/oreo.jpg" height="300" width="250">
                                                 <h4>Biscoito Oreo</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                  </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 3,50</h3>
                                                 <img src="img/saladedefruta.jpg" height="300" width="250">
                                                 <h4>Salada de frutas</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                                         </div>
                         
@@ -190,31 +175,22 @@
                         
                                         <div class="row">
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 1,49</h3>
                                                 <img src="img/maça.jpg" height="300" width="300">
                                                 <h4>Maça</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 4,00</h3>
                                                 <img src="img/pasteldeforno.jpg" height="300" width="250">
                                                 <h4>Pastel de forno</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 1,30</h3>
                                                 <img src="img/misto quente.jfif" height="300" width="250">
                                                 <h4>Misto quente</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -225,64 +201,46 @@
                                     <div class="container-fluid bg-3 text-center">
                                         <h1>Bebidas</h1><br>
                                         <div class="row">
-                                            <div class="col-sm-4" id="teste">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 4,00</h3>
                                                 <img src="img/sucomaracuja.jpg" height="300" width="250">
                                                 <h4>Suco de Maracuja 330ml</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 4,00</h3>
                                                 <img src="img/sucodeuva.jfif" height="300" width="250">
                                                 <h4>Suco de uva 330ml</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 2,50</h3>
                                                 <img src="img/nescau.webp" height="300" width="250">
                                                 <h4>Nescau 200ml</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                                         </div>
                         
                                         <hr style="height:2px;border-width:0;color:gray;background-color:rgba(138, 135, 135, 0.658)">
                         
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 2,00</h3>
                                                 <img src="img/agua.jpg" height="300" width="300">
                                                 <h4>Água mineral 500ml</h4>
                                                 <div class="btns">
-                                                    <button type="button" class="btn btn-default btn-lg">
-                                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                    </button>
                                                 </div>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <!-- <div class="col-sm-4 item">
                                                 <h3>R$ 3,50</h3>
                                                 <img src="img/coca cola lata.jpg" height="300" width="250">
                                                 <h4>Coca Cola 350ml</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
-                                            </div>
+                                            </div> -->
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 3,50</h3>
                                                 <img src="img/guarana.jpg" height="300" width="250">
                                                 <h4>Guaraná Antartica 350ml</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -293,65 +251,47 @@
                                     <div class="container-fluid bg-3 text-center">
                                         <h1>Doces</h1><br>
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                 
                                                 <h3>R$ 2,50</h3>
                                                 <img src="img/doce1.jpg" height="300" width="300">
                                                 <h4>Snickers barrinha</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 
                                                 <h3>R$ 2,00</h3>
                                                 <img src="img/doce2.jpg" height="300" width="250">
                                                 <h4>Trident</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <!-- <div class="col-sm-4 item">
                                                 <h3>R$ 0,10</h3>
                                                 <img src="img/bala.jpg" height="300" width="250">
                                                 <h4>Bala de maçã</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
-                                            </div>
+                                            </div> -->
                                         </div>
                         
                                         <hr style="height:2px;border-width:0;color:gray;background-color:rgba(138, 135, 135, 0.658)">
                         
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                         
                                                 <h3>R$ 1,50</h3>
                                                 <img src="img/doce3.jpg" height="300" width="300">
                                                 <h4>Stars chocolate</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 1,00</h3>
                                                 <img src="img/doce4.jpg" height="300" width="250">
                                                 <h4>Halls</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <!-- <div class="col-sm-4">
+                                            <!-- <div class="col-sm-4 item">
                                                 <h3>R$ 0,50</h3>
                                                 <img src="img/pirulito.jpg" height="300" width="250">
                                                 <h4>Pirulito Pop</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div> -->
                                         </div>
                                     </div>
@@ -361,33 +301,24 @@
                                     <div class="container-fluid bg-3 text-center">
                                         <h1>Bebidas</h1><br>
                                         <div class="row">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 <h3>R$ 10</h3>
                                                 <img src="img/prato1.jpg" height="300" width="300">
                                                 <h4>Arroz + Feijão + Carne ou Frango</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 
                                                 <h3>R$ 8,00</h3>
                                                 <img src="img/prato2.jpg" height="300" width="250">
                                                 <h4>Arroz + Strogonoff de frango</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                         
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 item">
                                                 
                                                 <h3>R$ 8</h3>
                                                 <img src="img/prato3.jpg" height="300" width="250">
                                                 <h4>Macarrão + Carne moída</h4>
-                                                <button type="button" class="btn btn-default btn-lg">
-                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Bloquear
-                                                </button>
                                             </div>
                                         </div>
                         
@@ -403,31 +334,22 @@
                         <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
                             <div class="container-fluid bg-3 text-center">
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 itemBloqueado">
                                         <h3>R$ 3,50</h3>
                                         <img src="img/coca cola lata.jpg" height="300" width="250">
                                         <h4>Coca Cola 350ml</h4>
-                                        <button type="button" class="btn btn-default btn-lg">
-                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Desbloquear
-                                        </button>
                                     </div>
 
-                                    <div class="col-sm-4">
+                                    <div class="col-sm- itemBloqueado">
                                         <h3>R$ 0,10</h3>
                                         <img src="img/bala.jpg" height="300" width="250">
                                         <h4>Bala de maçã</h4>
-                                        <button type="button" class="btn btn-default btn-lg">
-                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Desbloquear
-                                        </button>
                                     </div>
 
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 itemBloqueado">
                                         <h3>R$ 4,00</h3>
                                         <img src="img/coxinha.jpg" height="300" width="300">
                                         <h4>Coxinha de Frango</h4>
-                                        <button type="button" class="btn btn-default btn-lg">
-                                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Desbloquear
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -495,7 +417,7 @@
                         <div class="col-sm-2">
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control" id="valor" type="text" placeholder="Ex.: 50,00">
+                                <input class="form-control" id="valorPix" type="text" placeholder="Ex.: 50,00">
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -507,7 +429,7 @@
                     </div>
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" id="cadastrar">Gerar pagamento</button>
+                            <button type="submit" class="btn addItem" id="cadastrar"><i class="fas fa-money-bill"></i> Gerar pagamento</button>
                         </div>
                     </div>
                 </div>
@@ -518,7 +440,7 @@
                         <div class="col-sm-2">
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control" id="valor" type="text" placeholder="Ex.: 50,00">
+                                <input class="form-control" id="valorCartao" type="text" placeholder="Ex.: 50,00">
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -548,7 +470,7 @@
                     </div>
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" id="cadastrar">Pagar</button>
+                            <button type="submit" class="btn addItem" id="cadastrar"><i class="fas fa-money-bill"></i> Pagar</button>
                         </div>
                     </div>
                 </div>
@@ -649,7 +571,7 @@
 
                 <div class="form-group">        
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default" id="">Alterar</button>
+                        <button type="submit" class="btn changeItem" id=""><i class="fa fa-cog"></i> Alterar</button>
                     </div>
                 </div>
             </div>
@@ -664,7 +586,8 @@
 
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/formResponsavel.js"></script>
+    <script src="js/responsavel.js"></script>
     <script src="js/pagamento.js"></script>
     <script src="js/formProdutos.js"></script>
+    <script src="js/formResponsavel.js"></script>
 </html>
