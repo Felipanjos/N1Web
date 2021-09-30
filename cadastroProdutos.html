@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-      <title>Funcionário</title>
+      <title>Cadastrar produto</title>
         <!-- Meta tags Obrigatórias -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,11 +21,10 @@
         <link rel="icon" href="img/icon.png">
     </head>
 
-    <header id="headerFuncionario"></header>
+<header id="headerFuncionario"></header>
 
 <body>
     <div class="wrapper">
-    
         <div class="container" style="margin-bottom: 40px;">
 
             <form id="formCadastroProduto" class="form-group" name="nameFormulario" action="">
@@ -36,19 +35,42 @@
             </div>
             
             <div class="form-group">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome</label>
                 <input type="text" class="form-control" id="nome" placeholder="Insira o nome do produto" name="nome" required>
             </div>
 
             <div class="form-group">
-                <label for="nome">Descrição:</label>
-                <input type="text" class="form-control" id="descricao" placeholder="Insira, se houverem, informações adicionais sobre o produto" name="descricao" >
+                <label for="nome">Categoria</label><br>
+
+                <input type="radio" class="btn-check" name="options" id="radioLanche" autocomplete="off" checked>
+                <label class="btn btn-secondary" for="radioLanche">Lanche</label>
+
+                <input type="radio" class="btn-check" name="options" id="radioBebida" autocomplete="off">
+                <label class="btn btn-secondary" for="radioBebida">Bebida</label>
+
+                <input type="radio" class="btn-check" name="options" id="radioDoce" autocomplete="off">
+                <label class="btn btn-secondary" for="radioDoce">Doce</label>
+
+                <input type="radio" class="btn-check" name="options" id="radioAlmoco" autocomplete="off">
+                <label class="btn btn-secondary" for="radioAlmoco">Almoço</label>
+                
             </div>
     
             <div class="form-group">
-                <label for="endereço">Preço:</label>
+                <label for="preco">Preço</label>
                 <input type="number" class="form-control" id="preco" placeholder="Insira o preço do produto" name="preco" required>
             </div>
+
+            <div class="form-group">
+                <label for="fornecedor">Fornecedor</label>
+                <input type="number" class="form-control" id="fornecedor" placeholder="Insira o fornecedor do produto" name="fornecedor" required>
+            </div>
+
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="file" class="form-control" id="foto" name="preco" required>
+            </div>
+
             <button type="submit" class="btn btn-default pull-right">Cadastrar</button>
             </form>
         </div>

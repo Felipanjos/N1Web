@@ -1,9 +1,4 @@
 $(document).ready(function(){
-    $(".formulario").hide();
-    $("#pagamentos").show();
-});
-
-$(document).ready(function(){
     $("#btnFilhos").click(function(){
       $("#filhos").show();
       $("#pagamentos").hide();
