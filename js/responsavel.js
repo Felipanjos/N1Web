@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //Hide forms
     $("#formControleAlterarAluno").hide();
+    $(".productBlock").show();
 
     $("#alterarDadosAluno").click(function(){
         $("#formControleAlterarAluno").show();
