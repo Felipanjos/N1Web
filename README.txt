@@ -11,3 +11,12 @@ Senha: 123
 Tela do Funcionário
 Login: admin
 Senha: 123
+
+Equipe
+
+Felipe Santos de Anjos 
+    Matrícula: 144190004
+Guilherme Mateus do Carmo 
+    Matrícula: 029191067
+Valnei Albuquerque de Castro Filho 
+    Matrícula: 144191037
