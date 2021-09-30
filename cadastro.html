@@ -42,7 +42,7 @@
   			</style>
       </head>
 
-<header id="headerHome"></header>
+<header id="headerFuncionario"></header>
 
 <body class="body">
 
@@ -53,11 +53,9 @@
 			<div class="divcad">
 				<br><br>
 	
-				<h2>Faça o seu cadastro</h2>
-				<br><br>
 				<div class="btn-group navbar-cad" style="margin-bottom: 30px;">
+					<button type="button" id="btnFuncionario" class="btn btn-primary" style="border-color: #56e852; background-color: #56e852">Funcionário</button>
 					<button type="button" id="btnResponsavel" class="btn btn-primary" style="border-color: #56e852; background-color:#56e852">Responsável</button>
-					<button type="button" id="btnAluno" class="btn btn-primary" style="border-color: #56e852; background-color: #56e852">Aluno</button>
 				</div>
 	  
 				<div id="formResp">
@@ -152,89 +150,103 @@
 				
 				</div>
 	
-				<div id="formAluno">
+				<div id="formFuncionario">
 					<div class="text-center">
-						<h4 class="cor">Cadastro de alunos</h4>
-						<h5 class="cor"><strong>Informações com "*" são obrigatórias.</strong></h5>
+
+						<h4 class="cor">Cadastro de funcionários</h4>
+				
+						<h5 class="cor"><strong>Todas as informações são obrigatórias.</strong></h5>
 						<br>
 					</div>
 			
-					<form class="form-horizontal" id="formCadastroAluno">
+					<form class="form-horizontal" id="formCadastroFunc">
 						<div class="form-group">
-							<label class="control-label col-sm-2 cor" for="matricula">*Matrícula</label>
+							<label class="control-label col-sm-2 cor" for="nomeFunc">Nome:</label>
 							
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="matricula" placeholder="Insira seu nome" name="matricula" required>
+								<input type="text" class="form-control" id="nomeFunc" placeholder="Insira seu nome" name="nomeFunc" required>
 							</div>
 						</div>	
-						<div class="form-group">
-							<label class="control-label col-sm-2 cor" for="nomeAluno">*Nome completo</label>
-							
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="nomeAluno" placeholder="Insira seu nome completo" name="nomeAluno" required>
-							</div>
-						</div>	
-					
 						<div class="form-horizontal">
 							<div class="form-group">
-								<label class="control-label col-sm-4 cor" for="alunoResponsavel">*Nome do responsável</label>
+								<label class="control-label col-sm-2 cor" for="sobrenomeFunc">Sobrenome:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="alunoResponsavel" placeholder="Insira o nome do seu responsável" name="alunoResponsavel" required>
-								</div>
-							</div>
-						</div>
-	
-						<div class="form-horizontal">
-							<div class="form-group">
-								<label class="control-label col-sm-2 cor" for="numeroAluno">Telefone</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="numeroAluno" placeholder="Ex.: (00) 0000-0000" name="numeroAluno">
+									<input type="text" class="form-control" id="sobrenomeFunc" placeholder="Insira seu sobrenome" name="sobrenomeFunc" required>
 								</div>
 							</div>
 						</div>
 			
 						<div class="form-horizontal">
 							<div class="form-group">
-								<label class="control-label col-sm-2 cor" for="emailAluno">E-mail:</label>
+								<label class="control-label col-sm-2 cor" for="cpfFunc">CPF:</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" id="emailAluno" placeholder="Insira seu email" name="emailAluno">
+									<input type="text" class="form-control" id="cpfFunc" placeholder="Ex.: 000.000.000-00" name="cpfFunc" required>
+								</div>
+							</div>
+						</div>
+					
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2 cor" for="numeroFunc">Número de celular:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="numeroFunc" placeholder="Ex.: (00) 0000-0000" name="numeroFunc" required>
+								</div>
+							</div>
+						</div>
+			
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2 cor" for="emailFunc">E-mail:</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" id="emailFunc" placeholder="Insira seu email" name="emailFunc" required>
 									<small id="emailTexto" class="form-text text-muted">Não compartilharemos seu email com ninguém</small>
 								</div>
 							</div>
 						</div>
-			
+
 						<div class="form-horizontal">
 							<div class="form-group">
-								<label class="control-label col-sm-2 cor" for="loginAluno">*Login:</label>
+								<label class="control-label col-sm-2 cor" for="enderecoFunc">Endereço:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="loginAluno" placeholder="Crie seu login" name="loginAluno" required>
+									<input type="text" class="form-control" id="enderecoFunc" placeholder="Insira seu endereço" name="enderecoFunc" required>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2 cor" for="complementoFunc">Complemento:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="complementoFunc" placeholder="Insira o complemento do seu endereço" name="complementoFunc" required>
 								</div>
 							</div>
 						</div>
 			
 						<div class="form-horizontal">
 							<div class="form-group">
-								<label class="control-label col-sm-2 cor" for="senhaAluno">*Senha:</label>
+								<label class="control-label col-sm-2 cor" for="loginFunc">Login:</label>
 								<div class="col-sm-10">
-									<input type="password" class="form-control" id="senhaAluno" placeholder="**********" name="senhaAluno" required>
-									<small id="emailTexto" class="form-text text-muted">Lembre-se de não compartilhar sua senha!</small>
-			
-								</div>
-							</div>
-						</div>
-			
-						<div class="form-horizontal">
-							<div class="form-group">
-								<label class="control-label col-sm-2 cor" for="confSenhaAluno">*Confirme sua senha:</label>
-								<div class="col-sm-10">
-									<input type="password" class="form-control" id="confSenhaAluno" placeholder="**********" name="confSenhaAluno" required>
+									<input type="text" class="form-control cor" id="loginFunc" placeholder="Crie seu login" name="loginFunc" required>
 								</div>
 							</div>
 						</div>
 						
+						<div class="well">
+							<h4 class="cor" style="margin: 25px;"><i class="fa fa-key"></i> Sua senha será a credencial fornecida pela cantina.</h4>
+						</div>
+			
+						<!-- <div class="form-horizontal">
+							<div class="form-group">
+								<label class="control-label col-sm-2 cor" for="confSenhaFunc">Confirme sua senha:</label>
+								<div class="col-sm-10">
+									<input type="password" class="form-control" id="confSenhaFunc" placeholder="**********" name="confSenhaFunc" required>
+								</div>
+							</div>
+						</div> -->
+						
 						<div class="form-group">        
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-default" id="cadastrarAluno">Cadastrar</button>
+								<button type="submit" class="btn btn-default" id="cadastrar">Cadastrar</button>
 							</div>
 						</div>
 					</form>
@@ -251,7 +263,7 @@
   
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="js/validaCadastro.js"></script>
+	<script src="js/validaCadastroResp.js"></script>
 	<script src="js/formCadastro.js"></script>
   	<script src="js/header.js"></script>
 	<script src="js/footer.js"></script>

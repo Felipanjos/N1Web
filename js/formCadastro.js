@@ -1,15 +1,15 @@
 $(document).ready(function(){
 
-    $("#formResp").show();
-    $("#formAluno").hide();
+    $("#formResp").hide();
+    $("#formFuncionario").show();
     
-    $("#btnAluno").click(function(){
+    $("#btnFuncionario").click(function(){
         $("#formResp").hide();
-        $("#formAluno").show();
+        $("#formFuncionario").show();
     });
     
     $("#btnResponsavel").click(function(){
         $("#formResp").show();
-        $("#formAluno").hide();
+        $("#formFuncionario").hide();
     });
 });
