@@ -5,17 +5,19 @@ abstract class Produto {
     private $codigo; 
     private $nome; 
     private $foto; 
-    private $ingredientes;
     private $preco; 
     private $situacao; 
     private $tipo;
 
-    public function __construct() {
+    public function __construct($codigo, $nome, $foto, $preco) {
+        $this->codigo = $codigo;
+        $this->nome = $nome;
+        $this->foto = $foto;
+        $this->preco = $preco;
         $this->situacao = "Bloqueado";
     }
 
     public function bloquear() : void {
-
         $this->situacao = "Bloqueado";
     }
 
@@ -37,8 +39,8 @@ abstract class Produto {
            return $minhaConexao;
         }
         catch(PDOException $e) {
-         echo "entrou no catch".$e->getmessage();
-         return null;
+            echo "entrou no catch".$e->getmessage();
+            return null;
        }
     }
     
