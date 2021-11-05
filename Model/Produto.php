@@ -4,44 +4,16 @@ abstract class Produto {
 
     private $codigo; 
     private $nome; 
-    private $foto; 
-    private $ingredientes;
     private $preco; 
-    private $situacao; 
+	private $categoria;
     private $tipo;
+    // private $foto; 
 
-    public function __construct() {
-        $this->situacao = "Bloqueado";
-    }
+	public abstract function create();
+	public abstract function read();
+	public abstract function update();
+	public abstract function delete();
 
-    public function bloquear() : void {
-
-        $this->situacao = "Bloqueado";
-    }
-
-    public function desbloquear() : void {
-        $this->situacao = "Desbloqueado";
-    }
-
-    public abstract function incluir() : void;
-
-    public function conectar() {
-        $servername = "localhost:3306"; 
-        $username = "root";
-        $password = "";
-        $dbname = "fast_cantinas";
-
-        try {
-           $minhaConexao = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-           $minhaConexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           return $minhaConexao;
-        }
-        catch(PDOException $e) {
-         echo "entrou no catch".$e->getmessage();
-         return null;
-       }
-    }
-    
     public function getCodigo(){
 		return $this->codigo;
 	}
@@ -54,29 +26,17 @@ abstract class Produto {
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
-	public function getFoto(){
-		return $this->foto;
-	}
-	public function setFoto($foto){
-		$this->foto = $foto;
-	}
-	public function getIngredientes(){
-		return $this->ingredientes;
-	}
-	public function setIngredientes($ingredientes){
-		$this->ingredientes = $ingredientes;
-	}
+	// public function getFoto(){
+	// 	return $this->foto;
+	// }
+	// public function setFoto($foto){
+	// 	$this->foto = $foto;
+	// }
 	public function getPreco(){
 		return $this->preco;
 	}
 	public function setPreco($preco){
 		$this->preco = $preco;
-	}
-	public function getSituacao(){
-		return $this->situacao;
-	}
-	public function setSituacao($situacao){
-		$this->situacao = $situacao;
 	}
 	public function getTipo(){
 		return $this->tipo;
@@ -84,5 +44,15 @@ abstract class Produto {
 	public function setTipo($tipo){
 		$this->tipo = $tipo;
 	}
+	public function getCategoria(){
+		return $this->categoria;
+	}
+	public function setCategoria($categoria){
+		$this->categoria = $categoria;
+	} 
+	public abstract function setIngredientes($ingredientes);
+	public abstract function getIngredientes();
+	public abstract function setFornecedor($fornecedor);
+	public abstract function getFornecedor();
 }
 ?>

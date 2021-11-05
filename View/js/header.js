@@ -1,21 +1,23 @@
 $(function(){
-    $("#headerHome").load("headerHome.html"); 
+    $("#headerHome").load("headerHome.php"); 
 });
 
 $(function(){
-    $("#headerProdutos").load("headerProdutos.html");
+    $("#headerProdutos").load("headerProdutos.php");
 });
 
 $(function(){
-    $("#headerAluno").load("headerAluno.html");
+    $("#headerAluno").load("headerAluno.php");
 });
 
 $(function(){
-    $("#headerFuncionario").load("headerFuncionario.html");
+    $("#headerFuncionario").load("headerFuncionario.php");
 });
 
 $(function(){
-    $("#headerResponsavel").load("headerResponsavel.html");
+    $("#headerResponsavel").load("headerResponsavel.php");
 });
+
+
 
 
