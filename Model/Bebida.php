@@ -5,7 +5,10 @@ require_once "Produto.php";
 
 class Bebida extends Produto {
 
-    private $fornecedor;
+    public function __construct() {
+        $this->setTipo("bebida");
+        $this->setIngredientes(null);
+    }
 
     public function create() {
         $comidaDAO = new BebidaDAO();
@@ -25,19 +28,6 @@ class Bebida extends Produto {
     public function read() {
         $comidaDAO = new BebidaDAO();
 		$comidaDAO->read($this);
-    }
-
-    public function getFornecedor() {
-        return $this->fornecedor;
-    }
-    public function setFornecedor($fornecedor) {
-        $this->fornecedor = $fornecedor;
-    }
-    public function getIngredientes() {
-        return null;
-    }
-    public function setIngredientes($ingredientes) {
-        return null;
     }
 }
 ?>

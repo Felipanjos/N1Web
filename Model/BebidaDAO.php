@@ -50,8 +50,35 @@ class BebidaDAO extends ProdutoDAO {
 
     }
 
-    public function read($item) {
-        
+    public function read() {
+        try {
+            $conexao = Conexao::getConexao();
+            $sql = $conexao->prepare("select * from fast_cantinas.produto");
+
+            $sql->execute();
+            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+
+            $lista = array();
+            $i = 0;
+
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $produto = new Bebida();
+                $produto->setCodigo($linha['codigo']);
+                $produto->setNome($linha['nome']);
+                // $produto->setFoto[$linha['foto']];
+                $produto->setPreco($linha['preco']);
+                $produto->setCategoria($linha['categoria']);
+                $produto->setTipo($linha['tipo']);
+                $produto->setFornecedor($linha['fornecedor']);
+                // $produto->setIngredientes($linha['ingredientes']);
+                $lista[$i] = $produto; 
+                $i++;
+            }
+            
+            return $lista;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 }
 ?>

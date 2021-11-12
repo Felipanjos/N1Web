@@ -5,9 +5,14 @@
         // echo $url[1];
 
         switch ($url[1]){
-            case "INCLUIRPRODUTO":
-                require "Controller/ControladorFormIncluirProduto.php";
-                $controlador = new ControladorFormIncluirProduto();
+            case "CREATEPRODUTO":
+                require "Controller/ControladorCreateProduto.php";
+                $controlador = new ControladorFormCreateProduto();
+                $controlador->processaRequisicao();
+                break;
+            case "READPRODUTO":
+                require "Controller/ControladorReadProduto.php";
+                $controlador = new ControladorReadProduto();
                 $controlador->processaRequisicao();
                 break;
             default:

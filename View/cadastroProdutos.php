@@ -27,7 +27,7 @@
 	<div class="wrapper">
 		<div class="container" style="margin-bottom: 40px;">
 
-			<form id="formCadastroProduto" class="form-group" name="formCadastroProduto" method="POST" action="incluirProduto">
+			<form id="formCadastroProduto" class="form-group" name="formCadastroProduto" method="POST" action="createProduto">
 				<br><h2>Cadastramento de produtos</h2><br>
 				<div class="form-group">
 					<label for="codigo">Código</label>

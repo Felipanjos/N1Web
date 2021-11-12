@@ -96,3 +96,30 @@ hr {
     margin-top: 350px;
     margin-bottom: -100px;
 }
+
+.separador {
+    height: 2px; 
+    border-width: 0;
+    color:gray; 
+    background-color:rgba(141, 135, 135, 0.658);
+}
+
+#buttonEntrar {
+    background-color: rgb(11, 179, 62);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+#buttonEntrar:hover {
+    background-color: rgb(88, 248, 82);
+    cursor: pointer;
+}
+
+#labelbuttonEntrar {
+    color: rgb(11, 179, 62) ;
+    text-align: center;
+}

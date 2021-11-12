@@ -10,17 +10,17 @@ login.onsubmit = function(event) {
 
     if (username == "juninho" && pass == "123") {
         achou = true;
-        window.location.href = "aluno.html";
+        window.location.href = "aluno.php";
     }
 
     if (username == "admin" && pass == "123") {
         achou = true;
-        window.location.href = "cadastroProdutos.html";
+        window.location.href = "cadastroProdutos.php";
     }
 
     if (username == "jorgemachado21" && pass == "123") {
         achou = true;
-        window.location.href = "responsavel.html";
+        window.location.href = "responsavel.php";
     }
 
     if (!achou) {
