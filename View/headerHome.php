@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-light " style="background-color: white;">
       <div class="container">
         
-        <a href="home.html" class="navbar-brand">
+        <a href="home.php" class="navbar-brand">
           <img src="img/Logo Fast2.png" width="142">
         </a>
 
@@ -13,10 +13,10 @@
         <div class="collapse navbar-collapse" id="nav-principal">
           <ul class="navbar-nav ml-auto"> 
             <li class="nav-item">
-              <a href="home.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Home</a>
+              <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Home</a>
             </li>
             <li class="nav-item">
-              <a href="login.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Login</a>
+              <a href="login.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Login</a>
             </li>
           </ul>
         </div>

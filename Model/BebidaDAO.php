@@ -31,27 +31,5 @@ class BebidaDAO extends ProdutoDAO {
             echo $e->getMessage();
         }
     }
-
-    public function delete($item) {
-        try {
-            $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("delete from fast_cantinas.produto where codigo = :codigo");
-
-            $sql->bindParam("codigo", $codigo);
-            $codigo = $item->getCodigo();
-            
-            $sql->execute();
-        }  catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-
-    public function update($item) {
-
-    }
-
-    public function read($item) {
-        
-    }
 }
 ?>

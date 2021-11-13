@@ -1,19 +1,14 @@
 $(document).ready(function(){
-
     var itens = document.querySelectorAll(".item");
-    var itensBloqueados = document.querySelectorAll(".itemBloqueado");
     var edits = document.getElementsByClassName("btn btn-default btn-lg changeItem"),
-        removes = document.getElementsByClassName("btn btn-default btn-lg removeItem"),
-        blocks = document.getElementsByClassName("btn btn-default btn-lg blockItem");
-        unblocks = document.getElementsByClassName("btn btn-default btn-lg addItem");
+        removes = document.getElementsByClassName("btn btn-default btn-lg removeItem");
 
     for (i = 0; i < itens.length; i++) {
             
         var item = itens[i];
 
         var btnEdit = document.createElement("button"),
-            btnRemove = document.createElement("button"),
-            btnBloquear = document.createElement("button");
+            btnRemove = document.createElement("button");
             
         btnEdit.type = "button";
         btnEdit.classList.add("btn", "btn-default", "btn-lg", "changeItem");
@@ -24,13 +19,8 @@ $(document).ready(function(){
         btnRemove.classList.add("btn", "btn-default", "btn-lg", "removeItem");
         btnRemove.textContent = "Remover ";
         
-        btnBloquear.type = "button";
-        btnBloquear.classList.add("btn", "btn-default", "btn-lg", "blockItem");
-        btnBloquear.textContent = "Bloquear ";
-        
         item.appendChild(btnEdit);
         item.appendChild(btnRemove);
-        item.appendChild(btnBloquear);
     }
 
     for (i = 0; i < edits.length; i++) {
@@ -49,15 +39,6 @@ $(document).ready(function(){
         var iconRemove = document.createElement("i");
         iconRemove.classList.add("fas", "fa-trash");
         remove.appendChild(iconRemove);
-    }
-
-    for (i = 0; i < blocks.length; i++) {
-
-        var block = blocks[i];
-
-        var iconBlock = document.createElement("i");
-        iconBlock.classList.add("fa", "fa-ban");
-        block.appendChild(iconBlock);
     }
 })
 

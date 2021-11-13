@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-light " style="background-color: white;">
       <div class="container">
         
-        <a href="home.html" class="navbar-brand">
+        <a href="home.php" class="navbar-brand">
           <img src="img/Logo Fast2.png" width="142">
         </a>
     
@@ -16,10 +16,10 @@
                     <a href="#" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852" id="btnLogged">jorgemachado21</a>
                 </li>
                 <li class="nav-item">
-                    <a href="responsavel.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Aba do responsável</a>
+                    <a href="responsavel.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Aba do responsável</a>
                 </li>
                 <li class="nav-item">
-                    <a href="home.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
+                    <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
                   </li>
             </ul>
         </div>

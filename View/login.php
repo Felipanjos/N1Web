@@ -48,7 +48,7 @@
             <div class="container">
                 <br><br>
                 <div class="div">
-                    <h2 class="cor">Login</h2><br>
+                    <h2 class="cor" id="">Login</h2><br>
 
                     <form class="form-horizontal" id="formLogin">    
                         <div class="form-group">
@@ -75,7 +75,7 @@
                         
                         <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Entrar</button>
+                                <button type="submit" class="btn btn-default" id="buttonEntrar">Entrar</button>
                             </div>
                         </div>
                     </form>

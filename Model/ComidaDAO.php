@@ -1,6 +1,8 @@
 <?php 
 
 require_once "ProdutoDAO.php";
+require_once "Controller/Output.php";
+require_once "Conexao.php";
 
 class ComidaDAO extends ProdutoDAO {
 
@@ -30,28 +32,6 @@ class ComidaDAO extends ProdutoDAO {
          }catch(PDOException $e){
             echo $e->getMessage();
         }
-    }
-
-    public function delete($item) {
-        try {
-            $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("delete from fast_cantinas.produto where codigo = :codigo");
-
-            $sql->bindParam("codigo", $codigo);
-            $codigo = $item->getCodigo();
-            
-            $sql->execute();
-        }  catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-
-    public function update($item) {
-
-    }
-
-    public function read($item) {
-        
     }
 }
 ?>

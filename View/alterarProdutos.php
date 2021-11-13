@@ -19,6 +19,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 		<link rel="icon" href="img/icon.png">
+
+        <script>
+			function confirmarDelete() {
+				return confirm("Confirmar exclusão?");
+			}
+		</script>
 	</head>
 
 <header id="headerFuncionario"></header>
@@ -27,47 +33,52 @@
 	<div class="wrapper">
 		<div class="container" style="margin-bottom: 40px;">
 
-			<form id="formCadastroProduto" class="form-group" name="formCadastroProduto" method="POST" action="createProduto">
-				<br><h2>Cadastramento de produtos</h2><br>
+			<form id="formUpdateProduto" class="form-group" name="formUpdateProduto" method="POST" action="updateProduto" onsubmit="return confirmarDelete()">
+				<br><h2>Alterar dados do produto</h2><br>
 				<div class="form-group">
 					<label for="codigo">Código</label>
-					<input type="text" class="form-control" id="codigo" placeholder="Insira o código" name="codigo" required>
+					<input type="text" class="form-control" id="codigo" name="codigo" placeholder="Insira o código" value="<?php echo $codigo ?>" required>
 				</div>
-				
+                
 				<div class="form-group">
 					<label for="nome">Nome</label>
-					<input type="text" class="form-control" id="nome" placeholder="Insira o nome" name="nome" required>
+					<input type="text" class="form-control" id="nome" placeholder="Insira o nome" value="<?php echo $nome ?>" name="nome" required>
 				</div>
 
-				<div class="form-group">
+				<!-- <div class="form-group">
+					<label for="categoria">Categoria</label>
+                    <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Insira a categoria" value="<?php echo $categoria ?>" required>
+				</div> -->
+
+                <div class="form-group">
 					<label for="categoria">Categoria</label><br>
 
-					<input type="radio" class="btn-check categoria" name="categoria" id="lanche" autocomplete="off" value="lanche" checked>
+					<input type="radio" class="btn-check categoria" name="categoria" id="lanche" autocomplete="off" value="lanche" <?php echo ($categoria == "lanche" ? 'checked="checked"' : '') ?>>
 					<label class="btn btn-secondary" for="lanche">Lanche</label>
 
-					<input type="radio" class="btn-check categoria" name="categoria" id="bebida" value="bebida" autocomplete="off">
+					<input type="radio" class="btn-check categoria" name="categoria" id="bebida" value="bebida" autocomplete="off" <?php echo ($categoria == "bebida" ? 'checked="checked"' : '') ?>>
 					<label class="btn btn-secondary" for="bebida">Bebida</label>
 
-					<input type="radio" class="btn-check categoria" name="categoria" id="doce" value="doce" autocomplete="off">
+					<input type="radio" class="btn-check categoria" name="categoria" id="doce" value="doce" autocomplete="off" <?php echo ($categoria == "doce" ? 'checked="checked"' : '') ?> >
 					<label class="btn btn-secondary" for="doce">Doce</label>
 
-					<input type="radio" class="btn-check categoria" name="categoria" id="almoco" value="almoco" autocomplete="off">
+					<input type="radio" class="btn-check categoria" name="categoria" id="almoco" value="almoco" autocomplete="off" <?php echo ($categoria == "almoco" ? 'checked="checked"' : '') ?> >
 					<label class="btn btn-secondary" for="almoco">Almoço</label>
 				</div>
 		
 				<div class="form-group">
 					<label for="preco">Preço</label>
-					<input type="number" class="form-control" id="preco" placeholder="Insira o preço" name="preco" required>
+					<input type="number" class="form-control" id="preco" placeholder="Insira o preço" value="<?php echo $preco ?>" name="preco" required>
 				</div>
 
 				<div class="form-group" id="divFornecedor">
 					<label for="fornecedor">Fornecedor</label>
-					<input type="text" class="form-control" id="fornecedor" placeholder="Insira o fornecedor" name="fornecedor">
+					<input type="text" class="form-control" id="fornecedor" placeholder="Insira o fornecedor" value="<?php echo $fornecedor ?>" name="fornecedor">
 				</div>
 
 				<div class="form-group" id="divIngredientes">
 					<label for="ingredientes">Ingredientes</label>
-					<input type="text" class="form-control" id="ingredientes" placeholder="Insira os ingredientes" name="ingredientes">
+					<input type="text" class="form-control" id="ingredientes" placeholder="Insira os ingredientes" value="<?php echo $ingredientes ?>" name="ingredientes">
 				</div>
 
 				<!-- <div class="form-group">
@@ -75,7 +86,7 @@
 					<input type="file" class="form-control" style="padding-bottom: 40px; padding-top: 10px;" id="foto" name="foto" required>
 				</div> -->
 
-				<button type="submit" formtarget="readProduto" class="btn btn-default btn-lg pull-right changeItem"><i class="fa fa-plus"></i> Cadastrar</button>
+				<button type="submit" formtarget="readProduto" class="btn btn-default btn-lg pull-right changeItem"><i class="fas fa-cog"></i> Alterar</button>
 			</form>
 		</div>
 

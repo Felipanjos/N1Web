@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-light " style="background-color: white;">
       <div class="container">
         
-        <a href="home.html" class="navbar-brand">
+        <a href="home.php" class="navbar-brand">
           <img src="img/Logo Fast2.png" width="142">
         </a>
 
@@ -13,19 +13,19 @@
         <div class="collapse navbar-collapse" id="nav-principal">
           <ul class="navbar-nav ml-auto"> 
             <li class="nav-item">
-              <a href="aluno.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
+              <a href="aluno.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
             </li>
             <li class="nav-item">
-              <a href="alunoInfo.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Informações</a>
+              <a href="alunoInfo.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Informações</a>
             </li>
             <li class="nav-item">
               <li class="nav-item">
-                <a href="carrinho.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><i class="fas fa-shopping-cart"></i></a>
+                <a href="carrinho.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><i class="fas fa-shopping-cart"></i></a>
               </li>
               <li class="nav-item">
-                <a href="#.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">juninho</a>
+                <a href="#.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">juninho</a>
               </li>
-              <a href="home.html" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
+              <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
             </li>
           </ul>
         </div>

@@ -1,18 +1,40 @@
 <?php 
 
-abstract class Produto {
+class Produto {
 
     private $codigo; 
     private $nome; 
     private $preco; 
 	private $categoria;
     private $tipo;
+    private $fornecedor;
+    private $ingredientes;
     // private $foto; 
 
-	public abstract function create();
-	public abstract function read();
-	public abstract function update();
-	public abstract function delete();
+	public function create() {
+		$produtoDAO = new ProdutoDAO();
+		$produtoDAO->create($this);
+	}
+
+	public function read() {
+		$produtoDAO = new ProdutoDAO();
+		$produtoDAO->read($this);
+	}
+
+	public function readAll() {
+		$produtoDAO = new ProdutoDAO();
+		$produtoDAO->readAll();
+	}
+	
+	public function update() {
+		$produtoDAO = new ProdutoDAO();
+		$produtoDAO->update($this);
+	}
+	
+	public function delete() {
+		$produtoDAO = new ProdutoDAO();
+		$produtoDAO->delete($this);
+	}
 
     public function getCodigo(){
 		return $this->codigo;
@@ -50,9 +72,17 @@ abstract class Produto {
 	public function setCategoria($categoria){
 		$this->categoria = $categoria;
 	} 
-	public abstract function setIngredientes($ingredientes);
-	public abstract function getIngredientes();
-	public abstract function setFornecedor($fornecedor);
-	public abstract function getFornecedor();
+	public function getIngredientes() {
+        return $this->ingredientes;
+    }
+    public function setIngredientes($ingredientes) {
+        $this->ingredientes = $ingredientes;
+    }
+    public function getFornecedor() {
+        return $this->fornecedor;
+    }
+    public function setFornecedor($fornecedor) {
+        $this->fornecedor = $fornecedor;
+    }
 }
 ?>

@@ -175,6 +175,5 @@
     </body>
 
     <script src="js/footer.js"></script>
-    
     <script src="js/header.js"></script>
 </html>

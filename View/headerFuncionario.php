@@ -1,3 +1,10 @@
+<style>
+  .nav-button {
+    border-color: #56e852; 
+    color:#56e852;
+  }
+</style>
+
 <header>
     <nav class="navbar navbar-expand-sm navbar-light " style="background-color: white;">
       <div class="container">
@@ -13,25 +20,25 @@
         <div class="collapse navbar-collapse" id="nav-principal">
           <ul class="navbar-nav ml-auto"> 
             <li class="nav-item">
-                <a href="cadastroProdutos.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Cadastramento</a>
+                <a href="cadastroProdutos.php" class="btn btn-outline-primary ml-4 nav-button">Novo produto</a>
               </li>
             <li class="nav-item">
-              <a href="controleProdutos.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Controle de produtos</a>
+                <a href="readProduto" class="btn btn-outline-primary ml-4 nav-button">Produtos</a>
             </li>
             <li class="nav-item">
-              <a href="controleResponsaveis.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Controle de responsáveis</a>
+              <a href="controleResponsaveis.php" class="btn btn-outline-primary ml-4 nav-button nav-button">Responsáveis</a>
             </li>
             <li class="nav-item">
-              <a href="controleAlunos.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Consultar alunos</a>
+              <a href="controleAlunos.php" class="btn btn-outline-primary ml-4 nav-button">Alunos</a>
             </li>
             <li class="nav-item">
-              <a href="cadastro.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Cadastro</a>
+              <a href="cadastro.php" class="btn btn-outline-primary ml-4 nav-button">Cadastro</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">admin</a>
+              <a href="#" class="btn btn-outline-primary ml-4 nav-button">admin</a>
             </li>
             <li class="nav-item">
-                <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
+                <a href="home.php" class="btn btn-outline-primary ml-4 nav-button">Sair</a>
               </li>
           </ul>
         </div>
