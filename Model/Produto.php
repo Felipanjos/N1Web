@@ -11,15 +11,11 @@ class Produto {
     private $ingredientes;
     // private $foto; 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 7af0367ed1725b3828f38a99f27419ac553e68bb
+
 	public function create() {
 		$produtoDAO = new ProdutoDAO();
 		$produtoDAO->create($this);
 	}
-<<<<<<< HEAD
 
 	public function read() {
 		$produtoDAO = new ProdutoDAO();
@@ -29,12 +25,6 @@ class Produto {
 	public function readAll() {
 		$produtoDAO = new ProdutoDAO();
 		$produtoDAO->readAll();
-=======
-
-	public function read() {
-		$produtoDAO = new ProdutoDAO();
-		$produtoDAO->read();
->>>>>>> 7af0367ed1725b3828f38a99f27419ac553e68bb
 	}
 	
 	public function update() {
@@ -46,15 +36,6 @@ class Produto {
 		$produtoDAO = new ProdutoDAO();
 		$produtoDAO->delete($this);
 	}
-<<<<<<< HEAD
-=======
-=======
-	public abstract function create();
-	public abstract function read();
-	public abstract function update();
-	public abstract function delete();
->>>>>>> 2a16c76ae4d85cd76c7c2a40295e71bfc8f70876
->>>>>>> 7af0367ed1725b3828f38a99f27419ac553e68bb
 
     public function getCodigo(){
 		return $this->codigo;
