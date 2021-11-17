@@ -8,8 +8,8 @@ class ProdutoDAO {
         try{
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("insert into 
-            fast_cantinas.produto (codigo, nome, preco, categoria, tipo, ingredientes) 
-            values (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor, :ingredientes)");
+                                        fast_cantinas.produto (codigo, nome, preco, categoria, tipo, ingredientes) 
+                                            values (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor, :ingredientes)");
             $sql->bindParam("codigo", $codigo);
             $sql->bindParam("nome", $nome);
             // $sql->bindParam("foto", $foto);

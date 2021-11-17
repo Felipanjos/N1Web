@@ -4,7 +4,7 @@ require "Model/Comida.php";
 require "Model/Bebida.php";
 require_once "Controller/Controlador.php";
 
-class ControladorFormCreateProduto {
+class ControladorFormCreateProduto implements Controlador {
 
     private $produto;
     
@@ -31,9 +31,9 @@ class ControladorFormCreateProduto {
         $this->produto->setIngredientes($_POST['ingredientes']);
 
         $this->produto->create();
-
+        
         header('Location:readProduto', true, 302);
-
+        
         // foreach($_POST as $key=>$val) {
         //     if($key != 'submit') {
         //         echo $key . "=>" . $val . "<br/>";

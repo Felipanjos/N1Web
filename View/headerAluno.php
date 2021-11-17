@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <header>
     <nav class="navbar navbar-expand-sm navbar-light " style="background-color: white;">
       <div class="container">
@@ -23,7 +25,7 @@
                 <a href="carrinho.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><i class="fas fa-shopping-cart"></i></a>
               </li>
               <li class="nav-item">
-                <a href="#.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">juninho</a>
+                <a href="#.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><?php echo $_SESSION['login']; ?></a>
               </li>
               <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
             </li>

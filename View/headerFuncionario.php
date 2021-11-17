@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <style>
   .nav-button {
     border-color: #56e852; 
@@ -35,7 +37,7 @@
               <a href="cadastro.php" class="btn btn-outline-primary ml-4 nav-button">Cadastro</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn btn-outline-primary ml-4 nav-button">admin</a>
+              <a href="#" class="btn btn-outline-primary ml-4 nav-button"><?php echo $_SESSION['login']; ?></a>
             </li>
             <li class="nav-item">
                 <a href="home.php" class="btn btn-outline-primary ml-4 nav-button">Sair</a>

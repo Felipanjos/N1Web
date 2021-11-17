@@ -11,7 +11,6 @@ class Produto {
     private $ingredientes;
     // private $foto; 
 
-
 	public function create() {
 		$produtoDAO = new ProdutoDAO();
 		$produtoDAO->create($this);

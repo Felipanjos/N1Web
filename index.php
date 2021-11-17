@@ -2,6 +2,7 @@
 	if (isset($_GET['url'])) {
         $url = strtoupper($_GET['url']);
         $url = array_filter(explode('/', $url));
+        session_start();
         // echo $url[1];
 
         switch ($url[1]){
@@ -25,6 +26,10 @@
                 $controlador = new ControladorDeleteProduto;
                 $controlador->processaRequisicao();
                 break;
+            case "LOGIN":
+                require "Controller/ControladorLogin.php";
+                $controlador = new ControladorLogin;
+                $controlador->processaRequisicao();
             default:
                 require "Controller/ControladorHome.php";
                 $controlador = new ControladorHome();

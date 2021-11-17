@@ -17,7 +17,7 @@
 
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+	
 		<link rel="icon" href="img/icon.png">
 
 		<script>
@@ -58,7 +58,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($retorno as $elemento) { ?>
+							<?php foreach($retorno as $elemento) { ?> 
 								<tr>
 									<td><?php echo $elemento->getCodigo(); ?></td>
 									<td><?php echo $elemento->getNome(); ?></td>
@@ -67,6 +67,7 @@
 									<td><?php echo $elemento->getTipo(); ?></td>
 									<td><?php echo $elemento->getFornecedor(); ?></td>
 									<td><?php echo $elemento->getIngredientes(); ?></td>
+
 									<td>
 										<form action="updateProduto" method="POST">
 											<input type="hidden" name="id" value= "<?php echo $elemento->getCodigo(); ?>"> 

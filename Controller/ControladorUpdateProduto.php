@@ -21,11 +21,7 @@ class ControladorUpdateProduto implements Controlador {
         $preco = $this->produto->getPreco();
         $fornecedor = $this->produto->getFornecedor();
         $ingredientes = $this->produto->getIngredientes();
-
-        var_dump($codigo);
-        var_dump($ingredientes);
         require "View/alterarProdutos.php";
     }
 }
-
 ?>
