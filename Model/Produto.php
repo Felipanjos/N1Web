@@ -3,6 +3,7 @@
 class Produto {
 
     private $codigo; 
+	private $codigoNovo;
     private $nome; 
     private $preco; 
 	private $categoria;
@@ -41,6 +42,12 @@ class Produto {
 	}
 	public function setCodigo($codigo){
 		$this->codigo = $codigo;
+	}
+    public function getCodigoNovo(){
+		return $this->codigoNovo;
+	}
+	public function setCodigoNovo($codigoNovo){
+		$this->codigoNovo = $codigoNovo;
 	}
 	public function getNome(){
 		return $this->nome;

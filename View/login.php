@@ -46,7 +46,6 @@
                 }
             </script>
       </head>
-
     <header id="headerHome"></header>
 
     <body class="body">
@@ -68,6 +67,7 @@
                             <label class="control-label col-sm-2 cor" for="senha">Senha:</label>
                             <div class="col-sm-10">          
                                 <input type="password" class="form-control" id="senha" placeholder="********" name="senha" required>
+                                <!-- <div class="erroLogin"><br><h2>Erro</h2></div> -->
                             </div>
                         </div>
                         
@@ -82,6 +82,7 @@
                         <div class="form-group">        
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" id="buttonEntrar">Entrar</button>
+                                <input type="hidden" name="success" value="true">
                             </div>
                         </div>
                     </form>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $("#divFornecedor").hide();
+    // $("#divFornecedor").hide();
     var fornecedor = document.getElementById("fornecedor");
     var ingredientes = document.getElementById("ingredientes");
 
@@ -16,20 +16,22 @@ $(document).ready(function(){
         if (["almoco", "doce", "lanche"].includes(valorRadio))
             mostraIngredientes();
     });
+
+    function mostraIngredientes() {
+        $("#divIngredientes").show();
+        document.getElementById("ingredientes").required = true;
+        $("#divFornecedor").hide();
+        fornecedor.required = false;
+        fornecedor.value = null;
+    }
+    
+    function mostraFornecedores() {
+        $("#divFornecedor").show();
+        document.getElementById("fornecedor").required = true;
+        $("#divIngredientes").hide();
+        ingredientes.required = false;
+        ingredientes.value = null;
+    }
 });
 
-function mostraIngredientes() {
-    $("#divIngredientes").show();
-    document.getElementById("ingredientes").required = true;
-    $("#divFornecedor").hide();
-    fornecedor.required = false;
-    fornecedor.value = null;
-}
 
-function mostraFornecedores() {
-    $("#divFornecedor").show();
-    document.getElementById("fornecedor").required = true;
-    $("#divIngredientes").hide();
-    ingredientes.required = false;
-    ingredientes.value = null;
-}

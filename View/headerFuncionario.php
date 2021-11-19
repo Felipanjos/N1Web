@@ -28,7 +28,7 @@
                 <a href="readProduto" class="btn btn-outline-primary ml-4 nav-button">Produtos</a>
             </li>
             <li class="nav-item">
-              <a href="controleResponsaveis.php" class="btn btn-outline-primary ml-4 nav-button nav-button">Responsáveis</a>
+              <a href="readResponsavel" class="btn btn-outline-primary ml-4 nav-button">Responsáveis</a>
             </li>
             <li class="nav-item">
               <a href="controleAlunos.php" class="btn btn-outline-primary ml-4 nav-button">Alunos</a>

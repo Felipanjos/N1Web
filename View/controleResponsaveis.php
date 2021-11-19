@@ -20,127 +20,77 @@
 
         <link rel="icon" href="img/icon.png">
 
-        <script>
-            $(document).ready(function(){
-
-                $("#formControleAlterarResp").hide();
-
-                $("#alterarDados").click(function(){
-                    $("#formControleAlterarResp").show();
-                });
-                $("#collapse").click(function(){
-                    $("#formControleAlterarResp").hide();
-                });
-            })
-        </script>
-
-    </head>
+		<script>
+			function confirmarDelete() {
+				return confirm("Confirmar exclusão?");
+			}
+		</script>
+	</head>
 
 <header id="headerFuncionario"></header>
 
 <body>
     <div class="wrapper">
-        <div class="container">
-            <br><br><div class="col-sm-12">
-                <div class="input-group">
-                    <input type="search" class="form-control rounded" placeholder="Nome do responsável" aria-label="Search" aria-describedby="search-addon">
-                    <button type="button" class="btn btn-outline-primary">Procurar</button>
-                  </div>
-            </div>
+        <div class="container" style="margin-bottom: 40px;">
+					<div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
+						<div class="container">
 
-            <h2 style="margin-top: 40px;">Dados do responsável</h2>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>Sobrenome</th>
-                  <th>CPF</th>
-                  <th>Email</th>
-                  <th>Celular</th>
-                  <th>Login</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>Jorge</td>
-                    <td>Machado de Souza</td>
-                    <td>025.797.265-00</td>
-                    <td>machadojorge1980@gmail.com</td>
-                    <td>(71) 98889-8313</td>
-                    <td>jorgemachado21</td>
-                </tr>
-            </tbody>
-        </table>
+							<form class="form-group" action="">						
+								<div class="col-sm-12" style="padding-bottom: 20px;">
+									<div class="input-group">
+										<input id="readInfo" name="nome" type="search" class="form-control rounded" placeholder="Nome do responsável" aria-label="Search" aria-describedby="search-addon">
+										<button type="submit" class="btn btn-default" style="margin-left: 10px; background-color: lightblue;"><i class="fas fa-search"></i> </button>
+									</div>
+								</div>
+							</form>
 
-        <div class="form-group">        
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default changeItem" id="alterarDados"><i class="fas fa-cog"></i> Alterar dados</button>
-                <button type="submit" class="btn btn-default removeItem"><i class="fas fa-trash"></i> Remover responsável</button>
-                </div>
-            </div>
-            
-            <div id="formControleAlterarResp">
-                <br>
-                <h2>Alterar dados</h2>
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="novoEmailResp">E-mail:</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="novoEmailResp" placeholder="Novo email" name="novoEmailResp" required>
-                            <small id="emailTexto" class="form-text text-muted">Seu email não será compartilhado.</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="novoTelelefoneResp">Telefone:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="novoTelelefoneResp" placeholder="Ex.: (71) 00000-0000" name="novoTelelefoneResp" required>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="novaSenhaResp">Nova senha:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="novaSenhaResp" placeholder="**********" name="novaSenhaResp" required>
-                            <small class="form-text text-muted">Lembre-se de não compartilhar sua senha!</small>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="confNovaSenha">Confirme a senha:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="confNovaSenhaResp" placeholder="**********" name="confNovaSenhaResp" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">        
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default addItem"><i class="fa fa-check"></i> Confirmar</button>
-                        <button type="submit" class="btn btn-default removeItem" id="collapse"><i class="fa fa-times"></i> Fechar menu</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="formulario">
-
-        </div>
-
+							<h2 style="margin-top: 40px;">Responsáveis cadastrados</h2><br>
+							<table class="table table-bordered">
+								<thead class="thead-dark">
+									<tr>
+										<th>Nome</th>
+										<th>CPF</th>
+										<th>Email</th>
+										<th>Telefone</th>
+										<th>Login</th>
+										<th></th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach($retorno as $elemento) { ?>
+										<tr>
+											<td><?php echo $elemento->getNome(); ?></td>
+											<td><?php echo $elemento->getCpf(); ?></td>
+											<td><?php echo $elemento->getEmail(); ?></td>
+											<td><?php echo $elemento->getTelefone(); ?></td>
+											<td><?php echo $elemento->getLogin(); ?></td>
+											<td>
+												<form action="formUpdateResponsavel" method="POST">
+													<input type="hidden" name="id" value="<?php echo $elemento->getId(); ?>">
+													<button type="submit" class="btn btn-default btn-lg changeItem" value=""></button>
+												</form>
+											</td>
+											<td>
+												<form action="deleteResponsavel" method="POST" onsubmit="return confirmarDelete();">
+													<input type="hidden" name="id" value="<?php echo $elemento->getId(); ?>">
+													<button type="submit" class="btn btn-default btn-lg removeItem" value=""></button>
+												</form>
+											</td>
+										</tr>
+									<?php }; ?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
         <div class="push"></div>
     </div>
 
         <footer id="footer"></footer>
 </body>
-
-
     <script src="js/footer.js"></script>
     <script src="js/header.js"></script>
     <script src="js/formProdutos.js"></script>
+		<script src="js/controleProdutos.js"></script>
 </html>

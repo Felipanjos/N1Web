@@ -36,17 +36,19 @@
 				<div class="container">
 					<br><br>
 
-					<!-- <form id="formPesquisaProduto" class="form-group" name="formPesquisaProduto">						
+					<form id="formPesquisaProduto" class="form-group">						
 						<div class="col-sm-12" style="padding-bottom: 20px;">
 							<div class="input-group">
 								<input id="readInfo" name="nome" type="search" class="form-control rounded" placeholder="Digite um produto" aria-label="Search" aria-describedby="search-addon">
-								<button type="submit" class="btn btn-default" style="margin-left: 10px; background-color: lightblue;"><i class="fas fa-search"></i> Procurar</button>
+								<button type="submit" class="btn btn-default" style="margin-left: 10px; background-color: lightblue;"><i class="fas fa-search"></i> </button>
 							</div>
 						</div>
-					</form> -->
+					</form>
 
-					<table class="table table-striped">
-						<thead>
+					<h2 style="margin-top: 20px;">Produtos cadastrados</h2><br>
+
+					<table class="table table-bordered">
+						<thead class="thead-dark">
 							<tr>
 								<th>Código</th>
 								<th>Nome</th>
@@ -55,6 +57,8 @@
 								<th>Tipo</th>
 								<th>Fornecedor</th>
 								<th>Ingredientes</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -67,9 +71,8 @@
 									<td><?php echo $elemento->getTipo(); ?></td>
 									<td><?php echo $elemento->getFornecedor(); ?></td>
 									<td><?php echo $elemento->getIngredientes(); ?></td>
-
 									<td>
-										<form action="updateProduto" method="POST">
+										<form action="formUpdateProduto" method="POST">
 											<input type="hidden" name="id" value= "<?php echo $elemento->getCodigo(); ?>"> 
 											<button type="submit" class="btn btn-default btn-lg changeItem" value=""></button>
 										</form>

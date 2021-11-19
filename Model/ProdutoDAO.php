@@ -58,7 +58,6 @@ class ProdutoDAO {
                 $lista[$i] = $produto; 
                 $i++;
             }
-            // var_dump($lista);
             return $lista;
         } catch (PDOException $e) {
             return array();
@@ -67,15 +66,15 @@ class ProdutoDAO {
 
     public function read($produto) {
         try{
-            $minhaConexao = Conexao::getConexao();
-            $sql = $minhaConexao->prepare("select * from fast_cantinas.produto where codigo = :codigo");
+            $conexao = Conexao::getConexao();
+            $sql = $conexao->prepare("select * from fast_cantinas.produto where codigo = :codigo");
             $sql->bindParam("codigo",$codigo);
             $codigo = $produto->getCodigo();
                 
-           $sql->execute();
-           $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
+            $sql->execute();
+            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
            
-           while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+            while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
                 $produto->setNome($linha['nome']);
                 // $produto->setFoto[$linha['foto']];
                 $produto->setPreco($linha['preco']);
@@ -124,9 +123,7 @@ class ProdutoDAO {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("delete from fast_cantinas.produto where codigo = :codigo");
-
             $sql->bindParam("codigo", $codigo);
-            
             $sql->execute();
         }  catch (PDOException $e) {
             echo $e->getMessage();

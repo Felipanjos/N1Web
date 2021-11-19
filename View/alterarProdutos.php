@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
-	  <title>Cadastrar produto</title> 
+	  <title>Alterar produto</title> 
 		<!-- Meta tags Obrigatórias -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +21,48 @@
 		<link rel="icon" href="img/icon.png">
 
         <script>
-			function confirmarDelete() {
-				return confirm("Confirmar exclusão?");
+			function confirmaUpdate() {
+				return confirm("Confirmar alterações?");
 			}
+
+			$(document).ready(function(){
+
+				var fornecedor = document.getElementById("fornecedor");
+				var ingredientes = document.getElementById("ingredientes");
+				var valorRadio = document.querySelector('input[type=radio]:checked').value;
+
+				$('input:radio').on('click', function(radioGroup) {
+        
+					let valorRadio = radioGroup.currentTarget.value;
+
+					if (valorRadio === "bebida") 
+						mostraFornecedores();
+					if (["almoco", "doce", "lanche"].includes(valorRadio))
+						mostraIngredientes();
+				});
+
+				if (valorRadio === "bebida") 
+					mostraFornecedores();
+				if (["almoco", "doce", "lanche"].includes(valorRadio))
+					mostraIngredientes();
+
+
+				function mostraFornecedores() {
+					$("#divFornecedor").show();
+					document.getElementById("fornecedor").required = true;
+					$("#divIngredientes").hide();
+					ingredientes.required = false;
+					ingredientes.value = null;
+				}
+
+				function mostraIngredientes() {
+					$("#divIngredientes").show();
+					document.getElementById("ingredientes").required = true;
+					$("#divFornecedor").hide();
+					fornecedor.required = false;
+					fornecedor.value = null;
+				}
+			});
 		</script>
 	</head>
 
@@ -33,12 +72,9 @@
 	<div class="wrapper">
 		<div class="container" style="margin-bottom: 40px;">
 
-			<form id="formUpdateProduto" class="form-group" name="formUpdateProduto" method="POST" action="updateProduto" onsubmit="return confirmarDelete()">
+			<form id="formUpdateProduto" class="form-group" name="formUpdateProduto" method="POST" action="updateProduto" onsubmit="return confirmaUpdate()">
 				<br><h2>Alterar dados do produto</h2><br>
-				<div class="form-group">
-					<label for="codigo">Código</label>
-					<input type="text" class="form-control" id="codigo" name="codigo" placeholder="Insira o código" value="<?php echo $codigo ?>" required>
-				</div>
+				<input type="hidden" name="codigo" value= "<?php echo $_POST['id']; ?>"> 
                 
 				<div class="form-group">
 					<label for="nome">Nome</label>
@@ -53,7 +89,7 @@
                 <div class="form-group">
 					<label for="categoria">Categoria</label><br>
 
-					<input type="radio" class="btn-check categoria" name="categoria" id="lanche" autocomplete="off" value="lanche" <?php echo ($categoria == "lanche" ? 'checked="checked"' : '') ?>>
+					<input type="radio" class="btn-check categoria" name="categoria" id="lanche" value="lanche" autocomplete="off" <?php echo ($categoria == "lanche" ? 'checked="checked"' : '') ?>>
 					<label class="btn btn-secondary" for="lanche">Lanche</label>
 
 					<input type="radio" class="btn-check categoria" name="categoria" id="bebida" value="bebida" autocomplete="off" <?php echo ($categoria == "bebida" ? 'checked="checked"' : '') ?>>
@@ -97,5 +133,5 @@
 </body>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/footer.js"></script>
-	<script type="text/javascript" src="js/controleCategoria.js"></script>
+	<!-- <script type="text/javascript" src="js/controleCategoria.js"></script> -->
 </html

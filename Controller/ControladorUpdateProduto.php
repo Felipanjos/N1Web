@@ -1,27 +1,38 @@
 <?php 
 
-require "Model/Produto.php";
-require "Model/ProdutoDAO.php";
-require_once "Controller/Controlador.php";
+require "Model/Comida.php";
+require "Model/Bebida.php";
+require_once "Controlador.php";
 
 class ControladorUpdateProduto implements Controlador {
 
     private $produto;
 
     public function __construct() {
-        $this->produto = new Produto();
+        if($_POST['categoria']) {
+            if ($_POST['categoria'] == ('lanche' || 'almoco'|| 'doce')) {
+                $this->produto = new Comida("comida");
+            }        
+            if ($_POST['categoria'] == "bebida") {
+                $this->produto = new Bebida("bebida");
+            }
+        }
     }
 
     public function processaRequisicao() {
-        $this->produto->setCodigo($_POST['id']);
-        $this->produto->read();
-        $codigo = $this->produto->getCodigo();
-        $nome = $this->produto->getNome();
-        $categoria = $this->produto->getCategoria();
-        $preco = $this->produto->getPreco();
-        $fornecedor = $this->produto->getFornecedor();
-        $ingredientes = $this->produto->getIngredientes();
-        require "View/alterarProdutos.php";
+        $this->produto->setCodigo($_POST['codigo']);
+        $this->produto->setNome($_POST['nome']);
+        // $this->produto->setFoto($_POST['foto']);
+        $this->produto->setPreco($_POST['preco']);
+        $this->produto->setCategoria($_POST['categoria']);
+        
+        $this->produto->setFornecedor($_POST['fornecedor']);
+        $this->produto->setIngredientes($_POST['ingredientes']);
+        
+        $this->produto->update();
+
+        header('Location:readProduto', true, 302);
     }
 }
+
 ?>
