@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    $("#formResp").hide();
-    $("#formFuncionario").show();
+    $("#formResp").show();
+    $("#formFuncionario").hide();
     
     $("#btnFuncionario").click(function(){
         $("#formResp").hide();

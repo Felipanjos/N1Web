@@ -31,9 +31,6 @@
               <a href="readResponsavel" class="btn btn-outline-primary ml-4 nav-button">Responsáveis</a>
             </li>
             <li class="nav-item">
-              <a href="controleAlunos.php" class="btn btn-outline-primary ml-4 nav-button">Alunos</a>
-            </li>
-            <li class="nav-item">
               <a href="cadastro.php" class="btn btn-outline-primary ml-4 nav-button">Cadastro</a>
             </li>
             <li class="nav-item">

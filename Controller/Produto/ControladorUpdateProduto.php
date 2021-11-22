@@ -2,7 +2,7 @@
 
 require "Model/Comida.php";
 require "Model/Bebida.php";
-require_once "Controlador.php";
+require_once "Controller/Controlador.php";
 
 class ControladorUpdateProduto implements Controlador {
 

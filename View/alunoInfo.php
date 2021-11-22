@@ -41,14 +41,14 @@
         </thead>
         <tbody>
             <tr>
-                <td>30008429</td>
-                <td>401A</td>
-                <td>Matutino</td>
-                <td>Junior Machado de Lima</td>
-                <td>(71) 98421-2890</td>
-                <td>juninhomachado@gmail.com</td>
-                <td>juninho</td>
-                <td>Jorge Machado de Souza</td>
+                <td><?php echo $retorno->getMatricula(); ?></td>
+                <td><?php echo $retorno->getTurma(); ?></td>
+                <td><?php echo $retorno->getTurno(); ?></td>
+                <td><?php echo $retorno->getNome(); ?></td>
+                <td><?php echo $retorno->getTelefone(); ?></td>
+                <td><?php echo $retorno->getEmail(); ?></td>
+                <td><?php echo $_SESSION['login']; ?></td>
+                <td><?php echo $retorno->getPai()->getNome(); ?></td>
             </tr>
         </tbody>
         </table>

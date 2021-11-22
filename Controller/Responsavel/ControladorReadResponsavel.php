@@ -2,7 +2,7 @@
 
 require "Model/Responsavel.php";
 require_once "Model/ResponsavelDAO.php";
-require_once "Controlador.php";
+require_once "Controller/Controlador.php";
 
 class ControladorReadResponsavel implements Controlador {
 

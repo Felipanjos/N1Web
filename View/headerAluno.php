@@ -15,10 +15,10 @@
         <div class="collapse navbar-collapse" id="nav-principal">
           <ul class="navbar-nav ml-auto"> 
             <li class="nav-item">
-              <a href="aluno.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
+              <a href="aluno" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
             </li>
             <li class="nav-item">
-              <a href="alunoInfo.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Informações</a>
+              <a href="readAluno" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Informações</a>
             </li>
             <li class="nav-item">
               <li class="nav-item">

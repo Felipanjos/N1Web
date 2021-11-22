@@ -1,6 +1,6 @@
 <?php 
 
-require "Pessoa.php";
+require_once "Pessoa.php";
 require_once "ResponsavelDAO.php";
 
 class Responsavel extends Pessoa {
@@ -8,6 +8,10 @@ class Responsavel extends Pessoa {
     private $id;
 	private $cpf;
     private $filhos = [];
+
+	public function __construct() {
+        $this->setTipo("responsavel");
+    }
 
 	public function create() {
 		$responsavelDAO = new ResponsavelDAO();
@@ -33,10 +37,6 @@ class Responsavel extends Pessoa {
 		$responsavelDAO = new ResponsavelDAO();
 		$responsavelDAO->delete($this);
 	}
-
-    public function __construct() {
-        $this->tipo = "responsavel";
-    }
 
     public function getCpf() {
         return $this->cpf;

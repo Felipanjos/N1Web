@@ -1,6 +1,6 @@
 <?php 
 
-require "UsuarioDAO.php";
+require_once "UsuarioDAO.php";
 
 class Usuario {
 
@@ -19,7 +19,7 @@ class Usuario {
                 return 'responsavel.php';
                 break;
             case "aluno":
-                return 'aluno.php';
+                return 'inicioAluno';
                 break;
             case "funcionario":
                 return 'readProduto';

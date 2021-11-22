@@ -53,7 +53,7 @@
     <div class="wrapper">
         <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="container">
-                <h2>Saldo atual: 30,00</h2><br>
+                <h2>Saldo atual: <?php echo $retorno->getSaldo(); ?></h2><br>
                 <div class="btn-group" style="margin-bottom: 30px;">
                     <button type="button" id="btnlanches" class="btn btn-primary">Lanches</button>
                     <button type="button" id="btnbebidas" class="btn btn-primary">Bebidas</button>

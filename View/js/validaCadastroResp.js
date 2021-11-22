@@ -6,13 +6,13 @@ $(document).ready(function(){
     btnCadastrarResponsavel.addEventListener("click", function(event) {
         event.preventDefault();
     
-        var pass = document.forms["formCadastro"]["senhaResp"].value;
-        var confPass = document.forms["formCadastro"]["confSenhaResp"].value;
+        var pass = document.forms["formCadastro"]["senha"].value;
+        var confPass = document.forms["formCadastro"]["confSenha"].value;
         var form = document.querySelector("#formCadastro");
         var senhaVazia = (pass == "" && confPass == "");
     
-        if ((pass == confPass) && !senhaVazia) {
-            alert("Cadastro realizado com sucesso.");   
+        if (!((pass === confPass) && !senhaVazia)) {
+            alert("Senha não confere.");   
         }
         
         else if (senhaVazia) {

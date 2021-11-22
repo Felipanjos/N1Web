@@ -1,7 +1,6 @@
 <?php 
 
 require_once "ProdutoDAO.php";
-require_once "Controller/Output.php";
 require_once "Conexao.php";
 
 class ComidaDAO extends ProdutoDAO {

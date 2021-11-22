@@ -1,7 +1,7 @@
 <?php 
 
 require "Model/ProdutoDAO.php";
-require_once "Controlador.php";
+require_once "Controller/Controlador.php";
 
 class ControladorDeleteProduto implements Controlador {
 

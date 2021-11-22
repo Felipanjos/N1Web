@@ -54,8 +54,8 @@
 				<br><br>
 	
 				<div class="btn-group navbar-cad" style="margin-bottom: 30px;">
-					<button type="button" id="btnFuncionario" class="btn btn-primary" style="border-color: #56e852; background-color: #56e852">Funcionário</button>
 					<button type="button" id="btnResponsavel" class="btn btn-primary" style="border-color: #56e852; background-color:#56e852">Responsável</button>
+					<button type="button" id="btnFuncionario" class="btn btn-primary" style="border-color: #56e852; background-color: #56e852">Funcionário</button>
 				</div>
 	  
 				<div id="formResp">
@@ -67,19 +67,19 @@
 						<br>
 					</div>
 			
-					<form class="form-horizontal" id="formCadastro">
+					<form class="form-horizontal" action="createResponsavel" id="formCadastro" method="POST">
 						<div class="form-group">
 							<label class="control-label col-sm-2 cor" for="nomeResp">Nome:</label>
 							
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="nomeResp" placeholder="Insira seu nome" name="nomeResp" required>
+								<input type="text" class="form-control" id="nomeResp" placeholder="Insira seu nome" name="nome" required>
 							</div>
 						</div>	
 						<div class="form-horizontal">
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="sobrenomeResp">Sobrenome:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="sobrenomeResp" placeholder="Insira seu sobrenome" name="sobrenomeResp" required>
+									<input type="text" class="form-control" id="sobrenomeResp" placeholder="Insira seu sobrenome" name="sobrenome" required>
 								</div>
 							</div>
 						</div>
@@ -88,7 +88,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="cpfResp">CPF:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="cpfResp" placeholder="Ex.: 000.000.000-00" name="cpfResp" required>
+									<input type="text" class="form-control" id="cpfResp" placeholder="Ex.: 000.000.000-00" name="cpf" required>
 								</div>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="numeroResp">Número de celular:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="numeroResp" placeholder="Ex.: (00) 0000-0000" name="numeroResp" required>
+									<input type="text" class="form-control" id="numeroResp" placeholder="Ex.: (00) 0000-0000" name="telefone" required>
 								</div>
 							</div>
 						</div>
@@ -106,7 +106,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="emailResp">E-mail:</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" id="emailResp" placeholder="Insira seu email" name="emailResp" required>
+									<input type="email" class="form-control" id="emailResp" placeholder="Insira seu email" name="email" required>
 									<small id="emailTexto" class="form-text text-muted">Não compartilharemos seu email com ninguém</small>
 								</div>
 							</div>
@@ -116,7 +116,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="loginResp">Login:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control cor" id="loginResp" placeholder="Crie seu login" name="loginResp" required>
+									<input type="text" class="form-control cor" id="loginResp" placeholder="Crie seu login" name="login" required>
 								</div>
 							</div>
 						</div>
@@ -125,7 +125,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="senhaResp">Senha:</label>
 								<div class="col-sm-10">
-									<input type="password" class="form-control" id="senhaResp" placeholder="**********" name="senhaResp" required>
+									<input type="password" class="form-control" id="senhaResp" placeholder="**********" name="senha" required>
 									<small id="emailTexto" class="form-text text-muted">Lembre-se de não compartilhar sua senha!</small>
 			
 								</div>
@@ -136,7 +136,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="confSenhaResp">Confirme sua senha:</label>
 								<div class="col-sm-10">
-									<input type="password" class="form-control" id="confSenhaResp" placeholder="**********" name="confSenhaResp" required>
+									<input type="password" class="form-control" id="confSenhaResp" placeholder="**********" name="confSenha" required>
 								</div>
 							</div>
 						</div>
@@ -159,19 +159,19 @@
 						<br>
 					</div>
 			
-					<form class="form-horizontal" id="formCadastroFunc">
+					<form class="form-horizontal" action="createFuncionario" id="formCadastroFunc" method="POST">
 						<div class="form-group">
 							<label class="control-label col-sm-2 cor" for="nomeFunc">Nome:</label>
 							
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="nomeFunc" placeholder="Insira seu nome" name="nomeFunc" required>
+								<input type="text" class="form-control" id="nomeFunc" placeholder="Insira seu nome" name="nome" required>
 							</div>
 						</div>	
 						<div class="form-horizontal">
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="sobrenomeFunc">Sobrenome:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="sobrenomeFunc" placeholder="Insira seu sobrenome" name="sobrenomeFunc" required>
+									<input type="text" class="form-control" id="sobrenomeFunc" placeholder="Insira seu sobrenome" name="sobrenome" required>
 								</div>
 							</div>
 						</div>
@@ -180,7 +180,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="cpfFunc">CPF:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="cpfFunc" placeholder="Ex.: 000.000.000-00" name="cpfFunc" required>
+									<input type="text" class="form-control" id="cpfFunc" placeholder="Ex.: 000.000.000-00" name="cpf" required>
 								</div>
 							</div>
 						</div>
@@ -189,7 +189,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="numeroFunc">Número de celular:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="numeroFunc" placeholder="Ex.: (00) 0000-0000" name="numeroFunc" required>
+									<input type="text" class="form-control" id="numeroFunc" placeholder="Ex.: (00) 0000-0000" name="telefone" required>
 								</div>
 							</div>
 						</div>
@@ -198,7 +198,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="emailFunc">E-mail:</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" id="emailFunc" placeholder="Insira seu email" name="emailFunc" required>
+									<input type="email" class="form-control" id="emailFunc" placeholder="Insira seu email" name="email" required>
 									<small id="emailTexto" class="form-text text-muted">Não compartilharemos seu email com ninguém</small>
 								</div>
 							</div>
@@ -208,7 +208,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="enderecoFunc">Endereço:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="enderecoFunc" placeholder="Insira seu endereço" name="enderecoFunc" required>
+									<input type="text" class="form-control" id="enderecoFunc" placeholder="Insira seu endereço" name="endereco" required>
 								</div>
 							</div>
 						</div>
@@ -217,7 +217,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="complementoFunc">Complemento:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="complementoFunc" placeholder="Insira o complemento do seu endereço" name="complementoFunc" required>
+									<input type="text" class="form-control" id="complementoFunc" placeholder="Insira o complemento do seu endereço" name="complemento" required>
 								</div>
 							</div>
 						</div>
@@ -226,7 +226,7 @@
 							<div class="form-group">
 								<label class="control-label col-sm-2 cor" for="loginFunc">Login:</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control cor" id="loginFunc" placeholder="Crie seu login" name="loginFunc" required>
+									<input type="text" class="form-control cor" id="loginFunc" placeholder="Crie seu login" name="login" required>
 								</div>
 							</div>
 						</div>
@@ -263,7 +263,7 @@
   
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="js/validaCadastroResp.js"></script>
+	<!-- <script src="js/validaCadastroResp.js"></script> -->
 	<script src="js/formCadastro.js"></script>
   	<script src="js/header.js"></script>
 	<script src="js/footer.js"></script>

@@ -1,7 +1,7 @@
 <?php 
 
 require "Model/ResponsavelDAO.php";
-require_once "Controlador.php";
+require_once "Controller/Controlador.php";
 
 class ControladorDeleteResponsavel implements Controlador {
 

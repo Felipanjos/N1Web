@@ -1,7 +1,7 @@
 <?php 
 
 require "Model/Responsavel.php";
-require_once "Controlador.php";
+require_once "Controller/Controlador.php";
 
 class ControladorUpdateResponsavel implements Controlador {
 

@@ -1,5 +1,6 @@
 <?php 
 
+require_once "Model/Usuario.php";
 require_once "Conexao.php";
 
 class UsuarioDAO {
@@ -7,8 +8,8 @@ class UsuarioDAO {
     public static function read($login) {
         try {
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("select * from fast_cantinas.usuario
-                                        where login = :login");
+            $sql = $conexao->prepare("SELECT * FROM fast_cantinas.usuario
+                                        WHERE login = :login");
             $sql->bindParam("login", $login);
 
             $sql->execute();
@@ -20,9 +21,9 @@ class UsuarioDAO {
                 $user->setSenha($linha['senha']);
                 $user->setTipo($linha['tipo']);
             }
-            return $user;
+            return isset($user) ? $user : null;
         }  catch (PDOException $e) {
-            $e->getMessage();
+            // $e->getMessage();
         }
     }
 }

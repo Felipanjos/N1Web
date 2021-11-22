@@ -36,34 +36,34 @@
    
             
             <h2 style="margin-top: 40px; margin-bottom: 10px;">Dados</h2>
-            <table class="table table-hover">
-              <thead>
+            <table class="table table-bordered">
+              <thead class="thead-dark">
                 <tr>
                   <th>Matrícula</th>
-                  <th>Turma</th>
-                  <th>Turno</th>
                   <th>Nome</th>
+                  <th>Saldo</th>
+                  <th>Turma</th>
+                  <th>Responsável</th>
+                  <th>Turno</th>
                   <th>Telefone</th>
                   <th>Email</th>
                   <th>Login</th>
-                  <th>Responsável</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>30008429</td>
-                  <td>401A</td>
-                  <td>Matutino</td>
                   <td>Junior Machado de Lima</td>
+                  <td>30,00</td>
+                  <td>401A</td>
+                  <td>Jorge Machado de Souza</td>
+                  <td>Matutino</td>
                   <td>(71) 98421-2890</td>
                   <td>juninhomachado@gmail.com</td>
                   <td>juninho</td>
-                  <td>Jorge Machado de Souza</td>
                 </tr>
               </tbody>
             </table>
-            
-            <br><h2>Saldo atual: 30,00</h2><br>
         </div>
 
         <div class="push"></div>

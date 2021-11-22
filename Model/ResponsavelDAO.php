@@ -5,16 +5,61 @@ require_once "Conexao.php";
 class ResponsavelDAO {
 
     public function create($item) {
+        try {
+            //Inserir na tabela usuário
+            $conexaoUsuario = Conexao::getConexao();
+            $sql = $conexaoUsuario->prepare("INSERT INTO fast_cantinas.usuario (login, senha, tipo) values (:login, :senha, :tipo)");
+            
+            $sql->bindParam("login", $login);
+            $sql->bindParam("senha", $senha);
+            $sql->bindParam("tipo", $tipo);
 
+            $senha = $item->getSenha();
+            $login = $item->getLogin();
+            $tipo = $item->getTipo();
+
+            $sql->execute();
+            $usuario = $conexaoUsuario->lastInsertId();
+            $conexaoUsuario = null;
+
+            //Inserir na tabela pessoa usando o id do usuário inserido
+            $conexaoPessoa = Conexao::getConexao();
+            $sql = $conexaoPessoa->prepare("INSERT INTO fast_cantinas.pessoa
+                                        (nome, telefone, email, idusuario) values (:nome, :telefone, :email, :usuario)");
+            $sql->bindParam("nome", $nome);
+            $sql->bindParam("telefone", $telefone);
+            $sql->bindParam("email", $email);
+            $sql->bindParam("usuario", $usuario);
+
+            $nome = $item->getNome();
+            $telefone = $item->getTelefone();
+            $email = $item->getEmail();
+
+            $sql->execute();
+            $pessoa = $conexaoPessoa->lastInsertId();
+            $conexaoPessoa = null;
+
+            //Inserir na tabela responsavel usando o id da pessoa inserida
+            $conexaoResponsavel = Conexao::getConexao();
+            $sql = $conexaoResponsavel->prepare("INSERT INTO fast_cantinas.responsavel (cpf, idpessoa) values (:cpf, :pessoa)");
+            $sql->bindParam("cpf", $cpf);
+            $sql->bindParam("pessoa", $pessoa);
+
+            $cpf = $item->getCpf();
+
+            $sql->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
     }
 
     public static function readAll() {
         try {
             $db = "fast_cantinas";
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("select r.id, p.nome, r.cpf, p.email, p.telefone, u.login from $db.pessoa p 
-                                            join $db.responsavel r on r.idpessoa = p.id 
-                                                join $db.usuario u on p.idusuario = u.id");
+            $sql = $conexao->prepare("SELECT r.id, p.nome, r.cpf, p.email, p.telefone, u.login FROM $db.pessoa p 
+                                            JOIN $db.responsavel r on r.idpessoa = p.id 
+                                                JOIN $db.usuario u on p.idusuario = u.id");
             
             $sql->execute();
             $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
@@ -43,10 +88,10 @@ class ResponsavelDAO {
         $db = "fast_cantinas";
         try {
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("select r.id, p.nome, r.cpf, p.email, p.telefone, u.login, u.senha from $db.pessoa p 
-                                        join $db.responsavel r on r.idpessoa = p.id 
-                                            join $db.usuario u on p.idusuario = u.id
-                                                where r.id = :id");
+            $sql = $conexao->prepare("SELECT r.id, p.nome, r.cpf, p.email, p.telefone, u.login, u.senha FROM $db.pessoa p 
+                                        JOIN $db.responsavel r on r.idpessoa = p.id 
+                                            JOIN $db.usuario u on p.idusuario = u.id
+                                                WHERE r.id = :id");
             $sql->bindParam("id", $id);
             $id = $responsavel->getId();
 
@@ -72,11 +117,11 @@ class ResponsavelDAO {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("update $db.responsavel r 
-                                        join $db.pessoa p on r.idpessoa = p.id 
-                                            join $db.usuario u on p.idusuario = u.id
+                                        JOIN $db.pessoa p on r.idpessoa = p.id 
+                                            JOIN $db.usuario u on p.idusuario = u.id
                                                 set $db.p.nome = :nome, $db.p.email = :email, $db.p.telefone = :telefone, 
                                                     $db.u.login = :login, $db.r.cpf = :cpf, $db.u.senha = :senha
-                                                        where $db.r.id = :id;");
+                                                        WHERE $db.r.id = :id;");
             
             $sql->bindParam("id", $id);
             $sql->bindParam("nome", $nome);
@@ -104,38 +149,13 @@ class ResponsavelDAO {
         try {
             $db = "fast_cantinas";
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("delete from $db.responsavel where id = :id");
+            $sql = $conexao->prepare("DELETE r, p, u 
+                                        FROM $db.responsavel AS r
+                                            JOIN $db.pessoa AS p ON r.idpessoa = p.id
+                                                JOIN $db.usuario AS u ON p.idusuario = u.id
+                                                    WHERE r.id = :id");
             $sql->bindParam("id", $id);
-            $sql->execute();
-
-            $sql1 = $conexao->prepare("select p.id from $db.pessoa p join $db.responsavel r on p.id = r.idpessoa where r.id = :id");
-            $sql1->bindParam("id", $id);
-            $sql1->execute();
-
-            $idPessoa = '';
-            while ($linha = $sql1->fetch(PDO::FETCH_ASSOC)) {
-                $idPessoa = $linha['id'];
-            }
-
-            $sql2 = $conexao->prepare("delete from $db.pessoa where id = :idPessoa");
-            $sql2->bindParam("idPessoa", $idPessoa);
-            $sql2->execute();      
-            
-            $sql3 = $conexao->prepare("select p.id from $db.pessoa p 
-                                        join $db.responsavel r on p.id = r.idpessoa  
-                                            join $db.usuario u on p.idusuario = u.id
-                                                where r.id = :id");
-            $sql3->bindParam("id", $id);
-            $sql3->execute();
-
-            $idUsuario = '';
-            while ($linha = $sql3->fetch(PDO::FETCH_ASSOC)) {
-                $idUsuario = $linha['id'];
-            }
-
-            $sql4 = $conexao->prepare("delete from $db.usuario where id = :idUsuario");
-            $sql4->bindParam("idUsuario", $idUsuario);
-            $sql4->execute();      
+            $sql->execute();  
         }  catch (PDOException $e) {
             echo $e->getMessage();
         }
