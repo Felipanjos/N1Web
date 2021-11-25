@@ -19,11 +19,9 @@ class ControladorCreateResponsavel implements Controlador {
         $this->responsavel->setLogin($_POST['login']);
         $this->responsavel->setSenha($_POST['senha']);
 
-        var_dump($this->responsavel->getTipo());
-
         $this->responsavel->create();
 
-        header('Location:readResponsavel', true, 302);
+        header('Location: readResponsavel', true, 302);
     }
 }
 

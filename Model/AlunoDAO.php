@@ -62,6 +62,36 @@ class AlunoDAO {
         }
     }
 
+    public static function pagar($aluno, $compra) {
+        try {
+            $db = 'fast_cantinas';
+            $conexao = Conexao::getConexao();
+            $sql = $conexao->prepare("UPDATE $db.aluno SET saldo = :saldo WHERE id = :id;");
+
+            $sql->bindParam("saldo", $saldo);
+            $sql->bindParam("id", $id);
+
+            $saldo = $aluno->getSaldo();
+            $id = $aluno->getId();
+
+            $sql->execute();
+
+            $conexaoCompra = Conexao::getConexao();
+            $sql = $conexaoCompra->prepare("INSERT INTO $db.compra (data, lista, total, idaluno) values ((SELECT NOW()), :lista, :total, :idaluno)");
+
+            $sql->bindParam("lista", $lista);
+            $sql->bindParam("total", $total);
+            $sql->bindParam("idaluno", $id);
+
+            $lista = $compra->getProdutos();
+            $total = $compra->getTotal();
+
+            $sql->execute();
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
     public function readAll() {}
 
     public function update() {}

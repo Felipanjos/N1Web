@@ -1,5 +1,7 @@
 <?php 
 
+require_once "ProdutoDAO.php";
+
 class Produto {
 
     private $codigo; 

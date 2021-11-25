@@ -51,7 +51,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
+        <!-- <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="container">
                 <h2>Saldo atual: <?php echo $retorno->getSaldo(); ?></h2><br>
                 <div class="btn-group" style="margin-bottom: 30px;">
@@ -65,14 +65,14 @@
                     <div class="container-fluid bg-3 text-center">
                         <h1>Lanches</h1><br>
                         <div class="row">
-                            <!-- <div class="col-sm-4 item">
+                            <div class="col-sm-4 item">
                                 <h3>R$ 4,00</h3>
                                 <img src="img/coxinha.jpg" height="300" width="300">
                                 <h4>Coxinha de Frango</h4>
                                 <button type="button" class="btn btn-default btn-lg">
-                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar
+                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 </button>
-                            </div> -->
+                            </div>
         
                             <div class="col-sm-4 item">
                                 <h3>R$ 3,29</h3>
@@ -147,14 +147,14 @@
                                 </div>
                             </div>
         
-                            <!-- <div class="col-sm-4 item">
+                            <div class="col-sm-4 item">
                                 <h3>R$ 3,50</h3>
                                 <img src="img/coca cola lata.jpg" height="300" width="250">
                                 <h4>Coca Cola 350ml</h4>
                                 <button type="button" class="btn btn-default btn-lg">
                                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Adicionar
                                 </button>
-                            </div> -->
+                            </div>
         
                             <div class="col-sm-4 item">
                                 <h3>R$ 3,50</h3>
@@ -184,11 +184,11 @@
                                 <h4>Trident</h4>
                             </div>
         
-                            <!-- <div class="col-sm-4 item">
+                            <div class="col-sm-4 item">
                                 <h3>R$ 0,10</h3>
                                 <img src="img/bala.jpg" height="300" width="250">
                                 <h4>Bala de maçã</h4>
-                            </div> -->
+                            </div>
                         </div>
         
                         <hr style="height:2px;border-width:0;color:gray;background-color:rgba(138, 135, 135, 0.658)">
@@ -207,11 +207,11 @@
                                 <h4>Halls</h4>
                             </div>
         
-                            <!-- <div class="col-sm-4 item">
+                            <div class="col-sm-4 item">
                                 <h3>R$ 0,50</h3>
                                 <img src="img/pirulito.jpg" height="300" width="250">
                                 <h4>Pirulito Pop</h4>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,7 +245,40 @@
                     </div>    
                 </div>
             </div>
-        </div>    
+        </div>     -->
+
+        <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
+					<div class="container">
+						<h2>Saldo: R$ <?php echo number_format($retorno->getSaldo(), 2, ',', '.'); ?></h2><br>
+						<h2>Produtos</h2><br>
+
+						<table class="table table-bordered">
+							<thead class="thead-dark">
+								<tr>
+									<th>Nome</th>
+									<th>Preço</th>
+									<th>Ingredientes</th>
+									<th></th>
+								</tr>
+								<tbody>
+									<?php foreach($produtos as $elemento) { ?> 
+										<tr>
+											<td><?php echo $elemento->getNome(); ?></td>
+											<td><?php echo number_format($elemento->getPreco(), 2, ',', '.'); ?></td>
+											<td><?php echo $elemento->getIngredientes(); ?></td>
+											<td>
+												<form action="addItemCarrinho" method="POST">
+													<input type="hidden" name="id" value="<?php echo $elemento->getCodigo();?>"> 
+													<button type="submit" class="btn btn-default btn-lg addItem" value="Add carrinho"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+												</form>
+											</td>
+										</tr>
+									<?php }; ?>
+								</tbody>
+							</thead>
+						</table>
+					</div>
+        </div>
 
         <div class="push"></div>
 

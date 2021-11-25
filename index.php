@@ -66,9 +66,40 @@
                 $controlador = new ControladorReadAluno();
                 $controlador->processaRequisicao();
                 break;
+            case "ADDITEMCARRINHO":
+                require "Controller/Aluno/ControladorAddItemCarrinho.php";
+                require_once "Model/SessionCarrinho.php";
+                $sessionCarrinho = new SessionCarrinho();
+                $controlador = new ControladorAddItemCarrinho($sessionCarrinho);
+                $controlador->processaRequisicao();
+                break;
+            case "READCARRINHO":
+                require "Controller/Aluno/ControladorReadCarrinho.php";
+                $controlador = new ControladorReadCarrinho();
+                $controlador->processaRequisicao();
+                break;
+            case "UPDATEITEMCARRINHO":
+                require "Controller/Aluno/ControladorUpdateItemCarrinho.php";
+                require_once "Model/SessionCarrinho.php";
+                $carrinhoSession = new SessionCarrinho();
+                $controlador = new ControladorUpdateItemCarrinho($carrinhoSession);
+                $controlador->processaRequisicao();
+                break;
+            case "DELETEITEMCARRINHO":
+                require "Controller/Aluno/ControladorDeleteItemCarrinho.php";
+                require_once "Model/SessionCarrinho.php";
+                $carrinhoSession = new SessionCarrinho();
+                $controlador = new ControladorDeleteItemCarrinho($carrinhoSession);
+                $controlador->processaRequisicao();
+                break;
             case "LOGIN":
                 require "Controller/ControladorLogin.php";
                 $controlador = new ControladorLogin();
+                $controlador->processaRequisicao();
+                break;
+            case "PAGARCARRINHO":
+                require "Controller/Aluno/ControladorPagarCarrinho.php";
+                $controlador = new ControladorPagarCarrinho();
                 $controlador->processaRequisicao();
                 break;
             default:

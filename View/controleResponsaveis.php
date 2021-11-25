@@ -68,13 +68,13 @@
 											<td>
 												<form action="formUpdateResponsavel" method="POST">
 													<input type="hidden" name="id" value="<?php echo $elemento->getId(); ?>">
-													<button type="submit" class="btn btn-default btn-lg changeItem" value=""></button>
+													<button type="submit" class="btn btn-default btn-lg changeItem"></button>
 												</form>
 											</td>
 											<td>
 												<form action="deleteResponsavel" method="POST" onsubmit="return confirmarDelete();">
 													<input type="hidden" name="id" value="<?php echo $elemento->getId(); ?>">
-													<button type="submit" class="btn btn-default btn-lg removeItem" value=""></button>
+													<button type="submit" class="btn btn-default btn-lg removeItem"></button>
 												</form>
 											</td>
 										</tr>

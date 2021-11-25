@@ -37,7 +37,7 @@
               <a href="#" class="btn btn-outline-primary ml-4 nav-button"><?php echo $_SESSION['login']; ?></a>
             </li>
             <li class="nav-item">
-                <a href="home.php" class="btn btn-outline-primary ml-4 nav-button">Sair</a>
+                <a href="login.php" class="btn btn-outline-primary ml-4 nav-button">Sair</a>
               </li>
           </ul>
         </div>

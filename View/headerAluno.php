@@ -15,19 +15,19 @@
         <div class="collapse navbar-collapse" id="nav-principal">
           <ul class="navbar-nav ml-auto"> 
             <li class="nav-item">
-              <a href="aluno" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
+              <a href="inicioAluno" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Produtos</a>
             </li>
             <li class="nav-item">
               <a href="readAluno" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Informações</a>
             </li>
             <li class="nav-item">
               <li class="nav-item">
-                <a href="carrinho.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><i class="fas fa-shopping-cart"></i></a>
+                <a href="readCarrinho" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><i class="fas fa-shopping-cart"></i></a>
               </li>
               <li class="nav-item">
                 <a href="#.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852"><?php echo $_SESSION['login']; ?></a>
               </li>
-              <a href="home.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
+              <a href="login.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
             </li>
           </ul>
         </div>
