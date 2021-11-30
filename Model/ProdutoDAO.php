@@ -119,11 +119,13 @@ class ProdutoDAO {
 
     }
 
-    public static function delete($codigo) {
+    public static function delete($produto) {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("delete from fast_cantinas.produto where codigo = :codigo");
             $sql->bindParam("codigo", $codigo);
+            $codigo = $produto->getCodigo();
+
             $sql->execute();
         }  catch (PDOException $e) {
             echo $e->getMessage();

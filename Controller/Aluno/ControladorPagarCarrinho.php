@@ -18,7 +18,7 @@ class ControladorPagarCarrinho implements Controlador {
     $this->aluno->read();
     $this->compra = new Compra($this->aluno, $_POST['total'], trim($_POST['lista']));
     $this->aluno->setSaldo($this->aluno->getSaldo() - $this->compra->getTotal());
-    AlunoDAO::pagar($this->aluno, $this->compra);
+    $this->aluno->pagar($this->compra);
       
     header('Location: inicioAluno', true, 302);
   }

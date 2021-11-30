@@ -15,7 +15,6 @@ class ControladorDeleteAluno implements Controlador {
     $this->aluno->setLogin($_POST['login']);
     $this->aluno->read();
     $this->aluno->delete();
-    ResponsavelDAO::delete($_POST['id']);
     header('Location: inicioResponsavel', true, 302);
   }
 }

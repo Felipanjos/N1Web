@@ -33,12 +33,6 @@ class ControladorFormCreateProduto implements Controlador {
         $this->produto->create();
         
         header('Location:readProduto', true, 302);
-        
-        // foreach($_POST as $key=>$val) {
-        //     if($key != 'submit') {
-        //         echo $key . "=>" . $val . "<br/>";
-        //     }
-        // }
     }
 }
 ?>  

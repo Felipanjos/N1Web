@@ -276,7 +276,6 @@
 
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/responsavel.js"></script>
     <script src="js/pagamento.js"></script>
     <script src="js/formProdutos.js"></script>
     <script src="js/formResponsavel.js"></script>

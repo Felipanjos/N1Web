@@ -37,6 +37,11 @@ class Aluno extends Pessoa {
 		$alunoDAO->delete($this);
 	}
 
+	public function pagar($compra) {
+		$alunoDAO = new AlunoDAO();
+		$alunoDAO->pagar($this, $compra);
+	}
+
 	public function getMatricula(){
 		return $this->matricula;
 	}

@@ -12,6 +12,7 @@ class DepositoDAO {
 												ON d.idaluno = a.id
 													WHERE a.id = :id;");
 			$sql->bindParam("id", $id);
+			
 			$sql->execute();
 
 			$lista = array();
@@ -26,7 +27,7 @@ class DepositoDAO {
 					$deposito->setMetodo($linha['metodo']);
 				$depositos[$i] = $deposito;
 				$i++;
-            }
+			}
 			return $depositos;
 		}catch(PDOException $e){
 			$e->getMessage();

@@ -22,7 +22,7 @@ class ControladorFormUpdateResponsavelAdmin implements Controlador {
         $telefone = $this->responsavel->getTelefone();
         $login = $this->responsavel->getLogin();
         $senha = $this->responsavel->getSenha();
-        require "View/alterarResponsavelAdmin.php";
+        require "View/updateResponsavelAdmin.php";
     }
 }
 ?>

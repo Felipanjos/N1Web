@@ -11,11 +11,11 @@ class ControladorDepositaAluno implements Controlador {
 
   public function __construct() {
     $this->responsavel = new Responsavel();
-    $this->responsavel->setLogin($_SESSION['login']);  
     $this->deposito = new Deposito();
   }
-
+  
   public function processaRequisicao() {
+    $this->responsavel->setLogin($_SESSION['login']);  
     $this->responsavel->readLogin();
     $this->responsavel->readFilhos();
 

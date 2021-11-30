@@ -37,15 +37,6 @@
 				<div class="container">
 					<br><br>
 
-					<form id="formPesquisaProduto" class="form-group">						
-						<div class="col-sm-12" style="padding-bottom: 20px;">
-							<div class="input-group">
-								<input id="readInfo" name="nome" type="search" class="form-control rounded" placeholder="Digite um produto" aria-label="Search" aria-describedby="search-addon">
-								<button type="submit" class="btn btn-default" style="margin-left: 10px; background-color: lightblue;"><i class="fas fa-search"></i> </button>
-							</div>
-						</div>
-					</form>
-
 					<h2 style="margin-top: 20px;">Produtos cadastrados</h2><br>
 
 					<table class="table table-bordered">

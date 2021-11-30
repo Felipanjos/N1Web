@@ -22,7 +22,7 @@ class ControladorFormUpdateAluno implements Controlador {
         $telefone = $this->aluno->getTelefone();
         $login = $this->aluno->getLogin();
         $senha = $this->aluno->getSenha();
-        require "View/alterarAluno.php";
+        require "View/updateAluno.php";
     }
 }
 ?>

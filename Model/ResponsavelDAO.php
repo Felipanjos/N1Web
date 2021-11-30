@@ -234,7 +234,7 @@ class ResponsavelDAO {
         }
     }
 
-    public static function delete($id) {
+    public function delete($responsavel) {
         try {
             $db = "fast_cantinas";
             $conexao = Conexao::getConexao();
@@ -244,6 +244,8 @@ class ResponsavelDAO {
                                                 JOIN $db.usuario AS u ON p.idusuario = u.id
                                                     WHERE r.id = :id");
             $sql->bindParam("id", $id);
+            $id = $responsavel->getId();
+            
             $sql->execute();  
         }  catch (PDOException $e) {
             echo $e->getMessage();

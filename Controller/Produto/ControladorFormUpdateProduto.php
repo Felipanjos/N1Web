@@ -21,7 +21,7 @@ class ControladorFormUpdateProduto implements Controlador {
         $preco = $this->produto->getPreco();
         $fornecedor = $this->produto->getFornecedor();
         $ingredientes = $this->produto->getIngredientes();
-        require "View/alterarProdutos.php";
+        require "View/updateProduto.php";
     }
 }
 ?>
