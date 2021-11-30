@@ -26,11 +26,6 @@ class Aluno extends Pessoa {
 		$alunoDAO = new AlunoDAO();
 		$alunoDAO->read($this);
 	}
-
-	public function readAll() {
-		$alunoDAO = new AlunoDAO();
-		$alunoDAO->readAll();
-	}
 	
 	public function update() {
 		$alunoDAO = new AlunoDAO();

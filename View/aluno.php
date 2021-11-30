@@ -1,3 +1,4 @@
+<?php require_once "Model/Formatador.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -53,7 +54,7 @@
     <div class="wrapper">
         <!-- <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="container">
-                <h2>Saldo atual: <?php echo $retorno->getSaldo(); ?></h2><br>
+                <h2>Saldo atual: <?php echo $this->aluno->getSaldo(); ?></h2><br>
                 <div class="btn-group" style="margin-bottom: 30px;">
                     <button type="button" id="btnlanches" class="btn btn-primary">Lanches</button>
                     <button type="button" id="btnbebidas" class="btn btn-primary">Bebidas</button>
@@ -249,7 +250,7 @@
 
         <div class="container-fluid bg-3 text-center" style="margin-top: 50px; margin-bottom: 50px;">
 					<div class="container">
-						<h2>Saldo: R$ <?php echo number_format($retorno->getSaldo(), 2, ',', '.'); ?></h2><br>
+						<h2>Saldo: R$ <?php echo Formatador::formataValor($this->aluno->getSaldo()); ?></h2><br>
 						<h2>Produtos</h2><br>
 
 						<table class="table table-bordered">
@@ -264,7 +265,7 @@
 									<?php foreach($produtos as $elemento) { ?> 
 										<tr>
 											<td><?php echo $elemento->getNome(); ?></td>
-											<td><?php echo number_format($elemento->getPreco(), 2, ',', '.'); ?></td>
+											<td><?php echo Formatador::formataValor($elemento->getPreco()); ?></td>
 											<td><?php echo $elemento->getIngredientes(); ?></td>
 											<td>
 												<form action="addItemCarrinho" method="POST">

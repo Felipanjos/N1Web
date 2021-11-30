@@ -21,13 +21,13 @@
 		<link rel="icon" href="img/icon.png">
 	</head>
 
-<header id="headerResponsavel"></header>
+<header id="headerFuncionario"></header>
 
 <body>
 	<div class="wrapper">
 		<div class="container" style="margin-bottom: 40px;">
 
-			<form id="formUpdateResponsavel" class="form-group" name="formUpdateResponsavel" method="POST" action="updateResponsavel" onsubmit="return confirmaUpdate()">
+			<form id="formUpdateResponsavelAdmin" class="form-group" name="formUpdateResponsavelAdmin" method="POST" action="updateResponsavel" onsubmit="return confirmaUpdate()">
 				<br><h2>Alterar dados</h2><br>
 				<input type="hidden" name="id" value= "<?php echo $_POST['id']; ?>"> 
 
@@ -68,7 +68,7 @@
 					<input type="password" class="form-control" id="confNovaSenhaResp" placeholder="**********" name="novaSenha" value="<?php echo $senha ?>" required>
 				</div>
 				
-				<button type="submit" id="alterar" formtarget="readResponsavel" class="btn btn-default btn-lg pull-right changeItem"><i class="fas fa-cog"></i> Alterar</button>
+				<button type="submit" formtarget="readResponsavel" id="alterarRespAdmin" class="btn btn-default btn-lg pull-right changeItem"><i class="fas fa-cog"></i> Alterar</button>
 			</form>
 		</div>
 

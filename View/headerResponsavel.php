@@ -14,12 +14,12 @@
     
         <div class="collapse navbar-collapse" id="nav-principal">
             <ul class="navbar-nav ml-auto"> 
-                <li class="nav-item">
-                  <a href="#" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852" id="btnLogged"><?php echo $_SESSION['login']; ?></a>
-                </li>
-                <li class="nav-item">
-                  <a href="responsavel.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Aba do responsável</a>
-                </li>
+              <li class="nav-item">
+                <a href="inicioResponsavel" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Aba do responsável</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852" id="btnLogged"><?php echo $_SESSION['login']; ?></a>
+              </li>
                 <li class="nav-item">
                   <a href="login.php" class="btn btn-outline-primary ml-4" style="border-color: #56e852; color:#56e852">Sair</a>
                 </li>

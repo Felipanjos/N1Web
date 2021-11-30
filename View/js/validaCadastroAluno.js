@@ -9,12 +9,17 @@ $(document).ready(function(){
         var form = document.querySelector("#formCadastroAluno");
         var senhaVazia = (pass == "" && confPass == "");
 
-        if ((pass == confPass) && !senhaVazia) {
-            alert("Cadastro realizado com sucesso.");   
+        if (!((pass === confPass) && !senhaVazia)) {
+            event.preventDefault();
+            alert("Senha e confirmar senha não conferem.");  
+            form.reset();
+            return;
         }
         
         else if (senhaVazia) {
+            event.preventDefault();
             alert("Senha e Confirmar senha devem ser preenchidos.");
+            form.reset();
             return;
         }
 

@@ -1,16 +1,7 @@
 $(document).ready(function(){
-    $("#alunos").hide();
+    $("#alunos").show();
     $("#pagamentos").hide();
     $("#config").hide();
-
-    $("#btnAlunos").click(function(){
-        $("#aluno1").hide();
-    });
-
-        $("#btnAluno1").click(function(){
-            $("#aluno1").show();
-        });
-
 
     $("#btnPagamentos").click(function(){
         $("#pix").hide();

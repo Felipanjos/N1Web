@@ -66,7 +66,7 @@
 											<td><?php echo $elemento->getTelefone(); ?></td>
 											<td><?php echo $elemento->getLogin(); ?></td>
 											<td>
-												<form action="formUpdateResponsavel" method="POST">
+												<form action="formUpdateResponsavelAdmin" method="POST">
 													<input type="hidden" name="id" value="<?php echo $elemento->getId(); ?>">
 													<button type="submit" class="btn btn-default btn-lg changeItem"></button>
 												</form>

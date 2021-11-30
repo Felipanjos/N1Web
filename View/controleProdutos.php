@@ -1,3 +1,4 @@
+<?php require_once "Model/Formatador.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -66,12 +67,11 @@
 								<tr>
 									<td><?php echo $elemento->getCodigo(); ?></td>
 									<td><?php echo $elemento->getNome(); ?></td>
-									<td><?php echo number_format($elemento->getPreco(), 2, ',', '.'); ?></td>
+									<td><?php echo Formatador::formataValor($elemento->getPreco()); ?></td>
 									<td><?php echo $elemento->getCategoria(); ?></td>
 									<td><?php echo $elemento->getTipo(); ?></td>
 									<td><?php echo $elemento->getFornecedor(); ?></td>
 									<td><?php echo $elemento->getIngredientes(); ?></td>
-
 									<td>
 										<form action="formUpdateProduto" method="POST">
 											<input type="hidden" name="id" value= "<?php echo $elemento->getCodigo(); ?>"> 

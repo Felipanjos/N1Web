@@ -2,13 +2,21 @@
 
 require_once "Controller/Controlador.php";
 require_once "Model/AlunoDAO.php";
+require_once "Model/Deposito.php";
 
 class ControladorReadAluno implements Controlador {
 
+    private $aluno;
+    
+    public function __construct() {
+        $this->aluno = new Aluno();
+    }
+    
     public function processaRequisicao() {
-        $retorno = AlunoDAO::read($_SESSION['login']);
+        $this->aluno->setLogin($_SESSION['login']);
+        $this->aluno->read();
+        $depositos = DepositoDAO::read($this->aluno->getId());
         require "View/alunoInfo.php";
     }
 }
-
 ?>

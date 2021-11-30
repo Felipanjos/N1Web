@@ -1,3 +1,4 @@
+<?php require_once "Model/Formatador.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -41,14 +42,14 @@
         </thead>
         <tbody>
             <tr>
-                <td><?php echo $retorno->getMatricula(); ?></td>
-                <td><?php echo $retorno->getTurma(); ?></td>
-                <td><?php echo $retorno->getTurno(); ?></td>
-                <td><?php echo $retorno->getNome(); ?></td>
-                <td><?php echo $retorno->getTelefone(); ?></td>
-                <td><?php echo $retorno->getEmail(); ?></td>
-                <td><?php echo $_SESSION['login']; ?></td>
-                <td><?php echo $retorno->getPai()->getNome(); ?></td>
+							<td><?php echo $this->aluno->getMatricula(); ?></td>
+							<td><?php echo $this->aluno->getTurma(); ?></td>
+							<td><?php echo $this->aluno->getTurno(); ?></td>
+							<td><?php echo $this->aluno->getNome(); ?></td>
+							<td><?php echo $this->aluno->getTelefone(); ?></td>
+							<td><?php echo $this->aluno->getEmail(); ?></td>
+							<td><?php echo $_SESSION['login']; ?></td>
+							<td><?php echo $this->aluno->getPai()->getNome(); ?></td>
             </tr>
         </tbody>
         </table>
@@ -56,25 +57,22 @@
 
         <br><h2>Histórico de transações</h2>
         <table class="table table-hover">
-        <thead>
-            <tr>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Data</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>PIX</td>
-            <td>200,00</td>
-            <td>25/08/2021</td>
-            </tr>
-            <tr>
-                <td>Cartão de débito</td>
-                <td>150,00</td>
-                <td>12/07/2021</td>
-            </tr>
-        </tbody>
+					<thead>
+						<tr>
+							<th>Método de pagamento</th>
+							<th>Valor</th>
+							<th>Data</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($depositos as $deposito) { ?>
+							<tr>
+								<td><?php echo $deposito->getMetodo(); ?></td>
+								<td><?php echo Formatador::formataValor($deposito->getValor()); ?></td>
+								<td><?php echo $deposito->getData(); ?></td>
+							</tr>
+						<?php }; ?>
+					</tbody>
         </table>
         <br>
 

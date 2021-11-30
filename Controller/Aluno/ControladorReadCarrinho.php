@@ -6,16 +6,20 @@ require_once "Model/Item.php";
 require_once "Model/SessionCarrinho.php";
 
 class ControladorReadCarrinho implements Controlador {
+    
     private $carrinho;
+    private $aluno;
 
     public function __construct(){
         $this->carrinho = new SessionCarrinho();  
+        $this->aluno = new Aluno();  
     }
 
     public function processaRequisicao(){
         $itensCarrinho = $this->carrinho->getItensCarrinho();
         $carrinho = $this->carrinho;
-        $aluno = AlunoDAO::read($_SESSION['login']);
+        $this->aluno->setLogin($_SESSION['login']);
+        $this->aluno->read();
         require "View/carrinho.php";
     }
 }

@@ -40,9 +40,40 @@
 					cursor: pointer;
 				}
   			</style>
+
+				<script>
+					// $(document).ready(function(){
+
+					// 	var btnCadastrarAluno = document.querySelector("#cadastrarAluno");
+
+					// 	btnCadastrarAluno.addEventListener("click", function(event) {
+					// 			event.preventDefault();
+
+					// 			var pass = document.forms["formCadastroAluno"]["senhaAluno"].value;
+					// 			var confPass = document.forms["formCadastroAluno"]["confSenhaAluno"].value;
+					// 			var form = document.querySelector("#formCadastroAluno");
+					// 			var senhaVazia = (pass == "" && confPass == "");
+
+					// 			if (!(pass === confPass) && !senhaVazia) {
+					// 					event.preventDefault();
+					// 					alert("Senha e confirmar senha não conferem.");  
+					// 					console
+					// 					form.reset();
+					// 					return;
+					// 			}
+								
+					// 			else if (senhaVazia) {
+					// 					event.preventDefault();
+					// 					alert("Senha e Confirmar senha devem ser preenchidos.");
+					// 					form.reset();
+					// 					return;
+					// 			}
+			    // 	});
+					// });
+				</script>
       </head>
 
-<header id="headerHome"></header>
+<header id="headerResponsavel"></header>
 
 <body class="body">
 
@@ -60,12 +91,12 @@
 						<br>
 					</div>
 			
-					<form class="form-horizontal" id="formCadastroAluno">
+					<form class="form-horizontal" id="formCadastroAluno" action="createAluno" method="POST">
 						<div class="form-group">
 							<label class="control-label col-sm-2 cor" for="matricula">*Matrícula</label>
 							
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="matricula" placeholder="Insira seu nome" name="matricula" required>
+								<input type="text" class="form-control" id="matricula" placeholder="Insira sua matrícula" name="matricula" required>
 							</div>
 						</div>	
 						<div class="form-group">
@@ -75,15 +106,6 @@
 								<input type="text" class="form-control" id="nomeAluno" placeholder="Insira seu nome completo" name="nomeAluno" required>
 							</div>
 						</div>	
-					
-						<div class="form-horizontal">
-							<div class="form-group">
-								<label class="control-label col-sm-4 cor" for="alunoResponsavel">*Nome do responsável</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="alunoResponsavel" placeholder="Insira o nome do seu responsável" name="alunoResponsavel" required>
-								</div>
-							</div>
-						</div>
 
 						<div class="form-horizontal">
 							<div class="form-group">
@@ -170,7 +192,7 @@
   
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="js/validaCadastroAluno.js"></script>
+	<!-- <script src="js/validaCadastroAluno.js"></script> -->
   	<script src="js/header.js"></script>
 	<script src="js/footer.js"></script>
   </html>

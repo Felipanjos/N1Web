@@ -7,8 +7,15 @@ require_once "Model/Produto.php";
 
 class ControladorInicioAluno implements Controlador {
 
+    private $aluno;
+
+    public function __construct() {
+        $this->aluno = new Aluno();
+    }
+
     public function processaRequisicao() {
-        $retorno = AlunoDAO::read($_SESSION['login']);
+        $this->aluno->setLogin($_SESSION['login']);
+        $this->aluno->read();
         $produtos = ProdutoDAO::readAll();
         require "View/aluno.php";
     }

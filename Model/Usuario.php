@@ -16,7 +16,7 @@ class Usuario {
     public function getPage() {
         switch ($this->getTipo()) {
             case "responsavel":
-                return 'responsavel.php';
+                return 'inicioResponsavel';
                 break;
             case "aluno":
                 return 'inicioAluno';

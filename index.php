@@ -31,6 +31,11 @@
                 $controlador = new ControladorDeleteProduto();
                 $controlador->processaRequisicao();
                 break;
+            case "INICIORESPONSAVEL":
+                require "Controller/Responsavel/ControladorInicioResponsavel.php";
+                $controlador = new ControladorInicioResponsavel();
+                $controlador->processaRequisicao();
+                break;
             case "CREATERESPONSAVEL":
                 require "Controller/Responsavel/ControladorCreateResponsavel.php";
                 $controlador = new ControladorCreateResponsavel();
@@ -39,6 +44,11 @@
             case "READRESPONSAVEL":
                 require "Controller/Responsavel/ControladorReadResponsavel.php";
                 $controlador = new ControladorReadResponsavel();
+                $controlador->processaRequisicao();
+                break;
+            case "FORMUPDATERESPONSAVELADMIN":
+                require "Controller/Responsavel/ControladorFormUpdateResponsavelAdmin.php";
+                $controlador = new ControladorFormUpdateResponsavelAdmin();
                 $controlador->processaRequisicao();
                 break;
             case "FORMUPDATERESPONSAVEL":
@@ -61,9 +71,34 @@
                 $controlador = new ControladorInicioAluno();
                 $controlador->processaRequisicao();
                 break;
+            case "CREATEALUNO":
+                require "Controller/Aluno/ControladorCreateAluno.php";
+                $controlador = new ControladorCreateAluno();
+                $controlador->processaRequisicao();
+                break;
             case "READALUNO":
                 require "Controller/Aluno/ControladorReadAluno.php";
                 $controlador = new ControladorReadAluno();
+                $controlador->processaRequisicao();
+                break;
+            case "DELETEALUNO":
+                require "Controller/Aluno/ControladorDeleteAluno.php";
+                $controlador = new ControladorDeleteAluno();
+                $controlador->processaRequisicao();
+                break;
+            case "FORMUPDATEALUNO":
+                require "Controller/Aluno/ControladorFormUpdateAluno.php";
+                $controlador = new ControladorFormUpdateAluno();
+                $controlador->processaRequisicao();
+                break;
+            case "UPDATEALUNO":
+                require "Controller/Aluno/ControladorUpdateAluno.php";
+                $controlador = new ControladorUpdateAluno();
+                $controlador->processaRequisicao();
+                break;
+            case "DEPOSITAALUNO":
+                require "Controller/Responsavel/ControladorDepositaAluno.php";
+                $controlador = new ControladorDepositaAluno();
                 $controlador->processaRequisicao();
                 break;
             case "ADDITEMCARRINHO":
