@@ -5,25 +5,24 @@ require_once "Conexao.php";
 
 class UsuarioDAO {
 
-    public static function read($login) {
+    public function read($usuario) {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("SELECT * FROM fast_cantinas.usuario
                                         WHERE login = :login");
             $sql->bindParam("login", $login);
 
+            $login = $usuario->getLogin();
+
             $sql->execute();
-            $result = $sql->setFetchMode(PDO::FETCH_ASSOC);
 
             while($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
-                $user = new Usuario();
-                $user->setLogin($linha['login']);
-                $user->setSenha($linha['senha']);
-                $user->setTipo($linha['tipo']);
+                $usuario->setLogin($linha['login']);
+                $usuario->setSenha($linha['senha']);
+                $usuario->setTipo($linha['tipo']);
             }
-            return isset($user) ? $user : null;
         }  catch (PDOException $e) {
-            // $e->getMessage();
+            $e->getMessage();
         }
     }
 }

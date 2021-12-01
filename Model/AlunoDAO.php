@@ -63,7 +63,7 @@ class AlunoDAO {
         }
     }
 
-    public static function read($aluno) {
+    public function read($aluno) {
         try {
             $conexao = Conexao::getConexao();
             $db = "fast_cantinas";
@@ -175,7 +175,7 @@ class AlunoDAO {
         }
     }
 
-    public static function delete($aluno) {
+    public function delete($aluno) {
         try {
             $db = "fast_cantinas";
             $conexao = Conexao::getConexao();

@@ -21,7 +21,7 @@ class ControladorInicioResponsavel implements Controlador {
         $retorno = $this->responsavel;
         $filhos = $this->responsavel->getFilhos();
         $saldo = $filhos[0]->getSaldo();
-        $depositos = DepositoDAO::read($filhos[0]->getId());
+        $depositos = DepositoDAO::readAll($filhos[0]->getId());
         require "View/responsavel.php";
     }
 }

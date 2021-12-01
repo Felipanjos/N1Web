@@ -8,7 +8,7 @@ class Usuario {
     private $senha;
     private $tipo;
 
-    public function findUser() {
+    public function read() {
         $usuarioDAO = new UsuarioDAO();
         $usuarioDAO->read($this);
     }

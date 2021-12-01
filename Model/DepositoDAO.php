@@ -2,7 +2,7 @@
 
 class DepositoDAO {
 
-	public static function read($id) {
+	public static function readAll($id) {
 		try {
 			$db = 'fast_cantinas'			;
 			$conexao = Conexao::getConexao();

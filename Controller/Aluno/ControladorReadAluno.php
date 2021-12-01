@@ -15,7 +15,7 @@ class ControladorReadAluno implements Controlador {
     public function processaRequisicao() {
         $this->aluno->setLogin($_SESSION['login']);
         $this->aluno->read();
-        $depositos = DepositoDAO::read($this->aluno->getId());
+        $depositos = DepositoDAO::readAll($this->aluno->getId());
         require "View/alunoInfo.php";
     }
 }

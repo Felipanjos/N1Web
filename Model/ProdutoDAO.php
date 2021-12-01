@@ -89,7 +89,7 @@ class ProdutoDAO {
        }
     }
 
-    public static function update($item) {
+    public function update($item) {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("update fast_cantinas.produto 
@@ -119,7 +119,7 @@ class ProdutoDAO {
 
     }
 
-    public static function delete($produto) {
+    public function delete($produto) {
         try {
             $conexao = Conexao::getConexao();
             $sql = $conexao->prepare("delete from fast_cantinas.produto where codigo = :codigo");
