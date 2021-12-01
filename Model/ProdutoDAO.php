@@ -37,7 +37,7 @@ class ProdutoDAO {
     public static function readAll() {
         try {
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("select * from fast_cantinas.produto");
+            $sql = $conexao->prepare("SELECT * FROM fast_cantinas.produto");
 
             $sql->execute();
             $result = $sql->setFetchMode(PDO::FETCH_ASSOC);

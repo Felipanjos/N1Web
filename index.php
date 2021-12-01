@@ -19,7 +19,7 @@
             case "FORMUPDATEPRODUTO":
                 require "Controller/Produto/ControladorFormUpdateProduto.php";
                 $controlador = new ControladorFormUpdateProduto();
-                $controlador->processaRequisicao();
+                $controlador->processaRequisicao(); 
                 break;
             case "UPDATEPRODUTO":
                 require "Controller/Produto/ControladorUpdateProduto.php";

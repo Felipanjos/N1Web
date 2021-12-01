@@ -12,9 +12,9 @@ class ControladorUpdateItemCarrinho implements Controlador {
      }
 
      public function processaRequisicao(){
-        if (isset($_POST['id']) && preg_match("/^[0-9]+/",$_POST['id'])) {
+        if (isset($_POST['id']) && preg_match("/^[0-9]+/", $_POST['id'])) {
             
-            $itemCarrinho = new ItemCarrinho($_POST['id'],$_POST['quantidade']);
+            $itemCarrinho = new ItemCarrinho($_POST['id'], $_POST['quantidade']);
             $this->carrinhoSession->atualizar($itemCarrinho);
         }
         header('Location: readCarrinho', true, 302);

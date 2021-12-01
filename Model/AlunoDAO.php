@@ -27,7 +27,7 @@ class AlunoDAO {
             //Inserir na tabela pessoa usando o id do usuário inserido
             $conexaoPessoa = Conexao::getConexao();
             $sql = $conexaoPessoa->prepare("INSERT INTO $db.pessoa
-                                        (nome, telefone, email, idusuario) values (:nome, :telefone, :email, :usuario)");
+                                                (nome, telefone, email, idusuario) VALUES (:nome, :telefone, :email, :usuario)");
             $sql->bindParam("nome", $nome);
             $sql->bindParam("telefone", $telefone);
             $sql->bindParam("email", $email);
@@ -111,24 +111,23 @@ class AlunoDAO {
                 $responsavel->setNome($linha['nome']);
                 $responsavel->setId($linha['id']);
             }
-
             $aluno->setPai($responsavel);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public static function pagar($aluno, $compra) {
+    public function pagar($aluno, $compra) {
         try {
             $db = 'fast_cantinas';
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("UPDATE $db.aluno SET saldo = :saldo WHERE id = :id;");
+            $sql = $conexao->prepare("UPDATE $db.aluno a SET saldo = :saldo WHERE a.idresponsavel = :id;");
 
             $sql->bindParam("saldo", $saldo);
             $sql->bindParam("id", $id);
 
             $saldo = $aluno->getSaldo();
-            $id = $aluno->getId();
+            $id = $aluno->getPai()->getId();
 
             $sql->execute();
 

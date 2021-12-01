@@ -7,9 +7,9 @@ class BebidaDAO extends ProdutoDAO {
     public function create($item) {
         try{
             $conexao = Conexao::getConexao();
-            $sql = $conexao->prepare("insert into 
+            $sql = $conexao->prepare("INSERT INTO
                                         fast_cantinas.produto (codigo, nome, preco, categoria, tipo, fornecedor) 
-                                            values (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor)");
+                                            VALUES (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor)");
             $sql->bindParam("codigo", $codigo);
             $sql->bindParam("nome", $nome);
             // $sql->bindParam("foto", $foto);

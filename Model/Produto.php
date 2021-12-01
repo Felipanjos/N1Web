@@ -4,15 +4,15 @@ require_once "ProdutoDAO.php";
 
 class Produto {
 
-    private $codigo; 
+	private $codigo; 
 	private $codigoNovo;
-    private $nome; 
-    private $preco; 
+	private $nome; 
+	private $preco; 
 	private $categoria;
-    private $tipo;
-    private $fornecedor;
-    private $ingredientes;
-    // private $foto; 
+	private $tipo;
+	private $fornecedor;
+	private $ingredientes;
+	// private $foto; 
 
 	public function create() {
 		$produtoDAO = new ProdutoDAO();

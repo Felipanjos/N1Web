@@ -12,7 +12,7 @@ class ControladorAddItemCarrinho implements Controlador {
      }
 
      public function processaRequisicao(){
-        if (isset($_POST['id']) && preg_match("/^[0-9]+/",$_POST['id'])){
+        if (isset($_POST['id']) && preg_match("/^[0-9]+/", $_POST['id'])){
 
             $itemCarrinho = new ItemCarrinho($_POST['id'], 1);
             $this->carrinhoSession->adicionar($itemCarrinho);
