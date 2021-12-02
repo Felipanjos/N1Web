@@ -20,16 +20,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <link rel="icon" href="img/icon.png">
-      </head>
+			
+				<script>
+					function confirmarDelete() {
+						return confirm("Confirmar exclusão?");
+					}
+				</script>
+    </head>
+		
+		<header id="headerResponsavel"></header>
 
-			<script>
-				function confirmarDelete() {
-					return confirm("Confirmar exclusão?");
-				}
-			</script>
-    <header id="headerResponsavel"></header>
-
-    <body>
+		<body>
     <div class="wrapper">
 
         <div class="container" id="opcoesResponsavel">
@@ -80,8 +81,8 @@
 												</form>
 											</td>
 											<td>
-												<form action="deleteAluno" method="POST">
-													<input type="hidden" name="login" value="<?php echo $filho->getLogin(); ?>" onsubmit="return confirmarDelete();">
+												<form action="deleteAluno" method="POST" onsubmit="return confirmarDelete();">
+													<input type="hidden" name="login" value="<?php echo $filho->getLogin(); ?>">
 													<button type="submit" class="btn btn-default blockItem"><i class="fa fa-trash"></i></button>
 												</form>
 											</td>
@@ -89,40 +90,7 @@
 										<?php }; ?>
 									</tbody>
 								</table>
-										<!-- <div class="historicoDeConsumo">
-											<br><br><h2>Histórico de alimentação</h2>
-
-											<table class="table table-hover">
-												<thead>
-													<tr>
-														<th>Item</th>
-														<th>Valor</th>
-														<th>Quantidade</th>
-														<th>Data</th>
-														<th>Total</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Pastel de forno</td>
-														<td>4,00</td>
-														<td>1</td>
-														<td>10/09/2021</td>
-														<td>4,00</td>
-													</tr>
-													<tr>
-															<td>Suco de maracujá</td>
-															<td>4,00</td>
-															<td>1</td>
-															<td>10/09/2021</td>
-															<td>4,00</td>
-													</tr>
-												</tbody>
-											</table>
-											<br>
-										</div> -->
-                </div>
-
+							</div>
             </div>
 
             <div id="pagamentos" class="formulario">

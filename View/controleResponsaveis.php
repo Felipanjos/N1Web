@@ -20,12 +20,12 @@
 
         <link rel="icon" href="img/icon.png">
 
-		<script>
-			function confirmarDelete() {
-				return confirm("Confirmar exclusão?");
-			}
-		</script>
-	</head>
+				<script>
+					function confirmarDelete() {
+						return confirm("Confirmar exclusão?");
+					}
+				</script>
+		</head>
 
 <header id="headerFuncionario"></header>
 
