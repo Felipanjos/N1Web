@@ -12,7 +12,6 @@ class ProdutoDAO {
                                             values (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor, :ingredientes)");
             $sql->bindParam("codigo", $codigo);
             $sql->bindParam("nome", $nome);
-            // $sql->bindParam("foto", $foto);
             $sql->bindParam("preco", $preco);
             $sql->bindParam("categoria", $categoria);
             $sql->bindParam("tipo", $tipo);
@@ -21,7 +20,6 @@ class ProdutoDAO {
             
             $codigo = $item->getCodigo();
             $nome = $item->getNome();
-            // $foto = $item->getFoto();
             $preco = $item->getPreco();
             $categoria = $item->getCategoria();
             $tipo = $item->getTipo();
@@ -49,7 +47,6 @@ class ProdutoDAO {
                 $produto = new Produto();
                 $produto->setCodigo($linha['codigo']);
                 $produto->setNome($linha['nome']);
-                // $produto->setFoto[$linha['foto']];
                 $produto->setPreco($linha['preco']);
                 $produto->setCategoria($linha['categoria']);
                 $produto->setTipo($linha['tipo']);
@@ -76,7 +73,6 @@ class ProdutoDAO {
            
             while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
                 $produto->setNome($linha['nome']);
-                // $produto->setFoto[$linha['foto']];
                 $produto->setPreco($linha['preco']);
                 $produto->setCategoria($linha['categoria']);
                 $produto->setTipo($linha['tipo']);
@@ -98,7 +94,6 @@ class ProdutoDAO {
 
             $sql->bindParam("codigo", $codigo);
             $sql->bindParam("nome", $nome);
-            // $sql->bindParam("foto", $foto);
             $sql->bindParam("preco", $preco);
             $sql->bindParam("categoria", $categoria);
             $sql->bindParam("fornecedor", $fornecedor);
@@ -106,7 +101,6 @@ class ProdutoDAO {
             
             $codigo = $item->getCodigo();
             $nome = $item->getNome();
-            // $foto = $item->getFoto();
             $preco = $item->getPreco();
             $categoria = $item->getCategoria();
             $fornecedor = $item->getFornecedor();

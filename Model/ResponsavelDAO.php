@@ -27,7 +27,7 @@ class ResponsavelDAO {
             //Inserir na tabela pessoa usando o id do usuário inserido
             $conexaoPessoa = Conexao::getConexao();
             $sql = $conexaoPessoa->prepare("INSERT INTO fast_cantinas.pessoa
-                                        (nome, telefone, email, idusuario) values (:nome, :telefone, :email, :usuario)");
+                                                (nome, telefone, email, idusuario) VALUES (:nome, :telefone, :email, :usuario)");
             $sql->bindParam("nome", $nome);
             $sql->bindParam("telefone", $telefone);
             $sql->bindParam("email", $email);
@@ -172,7 +172,6 @@ class ResponsavelDAO {
             $valor = $deposito->getValor();
             $idaluno = $deposito->getIdaluno();
             $metodo = $deposito->getMetodo();
-            echo "tudo certo";
 
             $sql->execute();
         } catch(PDOException $e) {

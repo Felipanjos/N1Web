@@ -167,7 +167,7 @@ class AlunoDAO {
             $email = $aluno->getEmail();
             $telefone = $aluno->getTelefone();
             $login = $aluno->getLogin();
-            $senha= $aluno->getSenha();  
+            $senha = $aluno->getSenha();  
             
             $sql->execute();
         } catch (PDOException $e) {

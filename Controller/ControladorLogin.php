@@ -26,10 +26,6 @@ class ControladorLogin implements Controlador {
             $_SESSION['login'] = $this->usuario->getLogin();
             $_SESSION['senha'] = $this->usuario->getSenha();
 
-            // var_dump($senhaDigitada);
-            // echo "<br>";
-            // var_dump($senhaBanco);
-
             if ($senhaDigitada === $senhaBanco) {
                 $this->usuario->setTipo($this->usuarioBanco->getTipo());
                 $target = $this->usuario->getPage(); 

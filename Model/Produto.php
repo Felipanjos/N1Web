@@ -12,7 +12,6 @@ class Produto {
 	private $tipo;
 	private $fornecedor;
 	private $ingredientes;
-	// private $foto; 
 
 	public function create() {
 		$produtoDAO = new ProdutoDAO();
@@ -57,12 +56,6 @@ class Produto {
 	public function setNome($nome){
 		$this->nome = $nome;
 	}
-	// public function getFoto(){
-	// 	return $this->foto;
-	// }
-	// public function setFoto($foto){
-	// 	$this->foto = $foto;
-	// }
 	public function getPreco(){
 		return $this->preco;
 	}

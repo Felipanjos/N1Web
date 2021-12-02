@@ -12,7 +12,6 @@ class BebidaDAO extends ProdutoDAO {
                                             VALUES (:codigo, :nome, :preco, :categoria, :tipo, :fornecedor)");
             $sql->bindParam("codigo", $codigo);
             $sql->bindParam("nome", $nome);
-            // $sql->bindParam("foto", $foto);
             $sql->bindParam("preco", $preco);
             $sql->bindParam("categoria", $categoria);
             $sql->bindParam("tipo", $tipo);
@@ -20,7 +19,6 @@ class BebidaDAO extends ProdutoDAO {
            
             $codigo = $item->getCodigo();
             $nome = $item->getNome();
-            // $foto = $item->getFoto();
             $preco = $item->getPreco();
             $categoria = $item->getCategoria();
             $tipo = $item->getTipo();

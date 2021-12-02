@@ -22,7 +22,6 @@ class ControladorUpdateProduto implements Controlador {
     public function processaRequisicao() {
         $this->produto->setCodigo($_POST['codigo']);
         $this->produto->setNome($_POST['nome']);
-        // $this->produto->setFoto($_POST['foto']);
         $this->produto->setPreco($_POST['preco']);
         $this->produto->setCategoria($_POST['categoria']);
         
